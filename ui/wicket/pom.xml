@@ -31,6 +31,7 @@
 	<groupId>com.expojo.ui</groupId>
 	<artifactId>expojo-wicket-parent</artifactId>
 	<packaging>pom</packaging>
+<!--	<version>3.7.1</version> -->
 
 	<name>Expojo - Wicket Parent</name>
 	<description></description>
@@ -47,6 +48,7 @@
 
 
 	<properties>
+<!-- <wicket.version>7.18.0</wicket.version> -->
 		<wicket.version>6.29.0</wicket.version>
 		<expojo.version>3.2.1</expojo.version>
 	</properties>
