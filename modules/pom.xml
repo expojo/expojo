@@ -5,7 +5,7 @@
 		<groupId>com.expojo</groupId>
 		<artifactId>expojo-parent</artifactId>
 		<version>3.2.1</version>	
-		<relativePath>../</relativePath>		
+		<relativePath>../pom.xml</relativePath>		
 	</parent>	
 
 
@@ -22,6 +22,12 @@
 	<properties>
 		<expojo.version>3.2.1</expojo.version>
 	</properties>
+
+	<modules>
+		<module>iam</module>
+		<module>web</module>
+	</modules>
+	
 
 	<dependencyManagement>
 		<dependencies>
@@ -59,7 +65,7 @@
 		</dependency>
 	</dependencies>
 
-
+<!--
   	<profiles>
 		<profile>
 			<id>build</id>
@@ -72,7 +78,7 @@
 			</modules>
 		</profile>
 	</profiles>
-  
+-->  
 	<build>
 		<plugins>
 			
