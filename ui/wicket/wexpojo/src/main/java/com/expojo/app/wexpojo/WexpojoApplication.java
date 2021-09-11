@@ -37,7 +37,7 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import com.expojo.app.wexpojo.ui.aspect.logout.LogoutPage;
 
-import static org.apache.wicket.settings.IExceptionSettings.SHOW_INTERNAL_ERROR_PAGE;
+import static org.apache.wicket.settings.ExceptionSettings.SHOW_INTERNAL_ERROR_PAGE;
 
 
 // -[Class]-
