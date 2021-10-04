@@ -12,6 +12,9 @@
  
 	<properties>
 
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+
         <maven.java.source>1.8</maven.java.source>
         <maven.java.target>1.8</maven.java.target>
 
@@ -36,13 +39,13 @@
 
 		<!-- DataNucleus versions -->
 
-		<datanucleus.api.jdo.version>5.2.3</datanucleus.api.jdo.version>
+		<datanucleus.api.jdo.version>5.2.7</datanucleus.api.jdo.version>
 		<datanucleus.cache.version>5.1.1</datanucleus.cache.version>
-		<datanucleus.core.version>5.2.2</datanucleus.core.version>
+		<datanucleus.core.version>5.2.8</datanucleus.core.version>
 		<datanucleus.guava.version>5.0.1</datanucleus.guava.version>
 		<datanucleus.jdo-query.version>5.0.9</datanucleus.jdo-query.version>
 		<datanucleus.jodatime.version>5.2.0-release</datanucleus.jodatime.version>
-		<datanucleus.rdbms.version>5.2.2</datanucleus.rdbms.version>
+		<datanucleus.rdbms.version>5.2.9</datanucleus.rdbms.version>
 		<datanucleus.maven.plugin.version>5.2.1</datanucleus.maven.plugin.version>
 
 		
