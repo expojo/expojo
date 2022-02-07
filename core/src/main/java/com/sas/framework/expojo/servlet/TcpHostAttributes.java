@@ -170,9 +170,18 @@ public static List<TcpHostAttributes> readSetOfConfigParameters(String parameter
 public String getUrl()
 {
 	String protocol = getEncrypted() ? "https://" : "http://";
-	String url = protocol + getSubdomain() + "." + getHost() + ":" + getPort();
+	StringBuilder url = new StringBuilder(protocol);
 	
-	return url;
+	if (subdomain != null && subdomain.length() > 0)
+	{
+		url.append(subdomain);
+		url.append(".");
+	}
+	
+	url.append(getHost());
+	url.append(":" + getPort());
+	
+	return url.toString();
 }
 
 /**
