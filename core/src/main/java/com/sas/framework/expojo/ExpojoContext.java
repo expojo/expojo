@@ -646,14 +646,16 @@ public static ExpojoContext get()
 	return (ExpojoContext)threadLocalExpojoContext.get();
 }
 
-
-
-
 /**
  * Destroys this model exposer instance, closing it's PersistenceProvider.
  */
 public void destroy()
 {
+	for(ExpojoComponent component: components.values())
+	{
+		component.close();
+	}
+
 	if ( persistenceProvider != null )
 	{
 		// close the persistence provider for this ModelExposer

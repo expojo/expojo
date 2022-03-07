@@ -1,4 +1,4 @@
-7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 000001d4 01 0001 
+7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 000001d5 01 0001 
 /{ class ClassDiagram/ 
 	01 3afc 394d7000 
 	"Expojo Context and Components"
@@ -52,7 +52,7 @@ IBoundS are registered using weak refrences and so will automatically be release
 					0002 /Bend coords/ 
 					/NullObj/ 00 0001 0000 
 					/{ class CClass/ 
-						01 000b 1f62519e /Location/ 000010ea 00000028 0000150e 000003d4 
+						01 000b 1f62519e /Location/ 00001090 00000028 000014b4 000003d4 
 						{
 						}
 						/UOID/ 02 394d7000 00 37529ed7 
@@ -629,7 +629,7 @@ Extend this class to make your application specific services. Typically methods 
 					0002 /Bend coords/ 
 					/NullObj/ 00 0001 0000 
 					/{ class CClass/ 
-						01 000b 2442d008 /Location/ 00001a0e 0000050a 00001e32 000006d6 
+						01 000b 2442d008 /Location/ 000019d2 000004f6 00001df6 000006fe 
 						{
 						}
 						/UOID/ 02 394d7000 00 00000069 
@@ -706,6 +706,17 @@ Returning getName() in this base class is mainly for backwards compatibility."
 								"Overridden in derived classes to allow initialization."
 								0000 01 00000000 00 01 00 00 0003 
 								"ExpojoContext expojoContext"
+								0000 
+								""
+							/} class Function/ 
+							/{ class Function/ 
+								01 0010 3439e1d4 0001 00 00 
+								"void"
+								"close"
+								"This can be overwritten to free up any resources that have been allocated by the component.
+If components are pooled then close() will be called before returning the component to the pool so that it can be reused by another thread at some later time. For security reaons it is mandatory that close() disconnects any authenticated/authorized connections etc.,"
+								0000 01 00000000 00 01 00 00 0003 
+								""
 								0000 
 								""
 							/} class Function/ 
@@ -1167,7 +1178,7 @@ Maybe be overridden by some derived classes to perform a native ORM Collection d
 			/NullObj/ 00 /UOID/ 02 28e0e003 /UOID/ 02 2442d008 
 		/} class AssociationChain/ 
 		/{ class CClass/ 
-			01 000b 0ab71044 /Location/ 0000105e 00000884 000014d2 00000c30 
+			01 000b 0ab71044 /Location/ 0000105e 00000988 000014d2 00000d34 
 			{
 			}
 			/UOID/ 02 394d7000 00 0000006f 
@@ -1676,7 +1687,7 @@ This is a static because it's shared by all threads - heh it's only the mock sys
 		/} class CClass/ 
 		/UOID/ 02 2668408a 
 		/{ class CClass/ 
-			01 000b 2f61a0c2 /Location/ 0000132e 000005be 000014fa 00000622 
+			01 000b 2f61a0c2 /Location/ 000011c6 000005c8 00001392 0000062c 
 			{
 			}
 			/UOID/ 02 394d7000 00 0000007a 
@@ -1707,7 +1718,7 @@ You may also like to optionally override establishGenesisObjects.
 			01 0069 258df0c4 
 			{
 				/{ class CardinalityAnchor/ 
-					01 006c 38fdf0c5 00001478 
+					01 006c 38fdf0c5 0000128e 
 					{
 					}
 					00 0002 00 01 0002 0000 02 
@@ -1722,7 +1733,7 @@ You may also like to optionally override establishGenesisObjects.
 					00 7f 01 01 01 01 /NullObj/ 00 
 				/} class CardinalityAnchor/ 
 				/{ class CardinalityAnchor/ 
-					01 006c 2dab60c7 00001478 
+					01 006c 2dab60c7 0000128e 
 					{
 					}
 					01 0000 01 01 0002 0001 00 
@@ -1742,7 +1753,7 @@ You may also like to optionally override establishGenesisObjects.
 			/NullObj/ 00 /UOID/ 02 0ab71044 /UOID/ 02 2f61a0c2 
 		/} class AssociationChain/ 
 		/{ class Annotation/ 
-			01 0064 298050d0 /Location/ 00000d02 00000e10 0000128b 0000110e 
+			01 0064 298050d0 /Location/ 00000c3a 00000e92 000011c3 00001190 
 			{
 			}
 			"USAGE:
@@ -1766,7 +1777,7 @@ servlets so that the ModelExposer is available to any of your code via ModelExpo
 			01 0069 035c40d8 
 			{
 				/{ class CardinalityAnchor/ 
-					01 006c 00d5b0d9 000005c8 
+					01 006c 00d5b0d9 000005d2 
 					{
 					}
 					00 0002 00 01 0002 0000 03 
@@ -1781,7 +1792,7 @@ servlets so that the ModelExposer is available to any of your code via ModelExpo
 					00 7f 01 01 01 01 /NullObj/ 00 
 				/} class CardinalityAnchor/ 
 				/{ class CardinalityAnchor/ 
-					01 006c 2801a0db 000005c8 
+					01 006c 2801a0db 000005d2 
 					{
 					}
 					01 0002 01 01 0002 0000 01 
@@ -1801,7 +1812,7 @@ servlets so that the ModelExposer is available to any of your code via ModelExpo
 			/NullObj/ 00 /UOID/ 02 28e0e003 /UOID/ 02 2f61a0c2 
 		/} class AssociationChain/ 
 		/{ class CClass/ 
-			01 000b 13a2f101 /Location/ 00000924 00000758 00000b18 00000834 
+			01 000b 13a2f101 /Location/ 0000091a 00000708 00000b0e 000007e4 
 			{
 			}
 			/UOID/ 02 394d7000 00 01e6308c 
@@ -1851,7 +1862,7 @@ Attach is called after attachement occurs and detach is called before detachment
 			01 0069 3eec6104 
 			{
 				/{ class CardinalityAnchor/ 
-					01 006c 1733b105 00000762 
+					01 006c 1733b105 00000758 
 					{
 					}
 					00 0002 00 01 0002 0000 01 
@@ -1866,7 +1877,7 @@ Attach is called after attachement occurs and detach is called before detachment
 					00 7f 01 01 01 01 /NullObj/ 00 
 				/} class CardinalityAnchor/ 
 				/{ class CardinalityAnchor/ 
-					01 006c 25e09107 00000762 
+					01 006c 25e09107 00000758 
 					{
 					}
 					01 0000 01 01 0002 0001 03 
@@ -1889,7 +1900,7 @@ Attach is called after attachement occurs and detach is called before detachment
 			01 0069 29c30110 
 			{
 				/{ class CardinalityAnchor/ 
-					01 006c 04ab5111 0000136a 
+					01 006c 04ab5111 000011da 
 					{
 					}
 					00 0002 00 01 0002 0000 02 
@@ -1920,7 +1931,7 @@ Attach is called after attachement occurs and detach is called before detachment
 				/} class CardinalityAnchor/ 
 				/UOID/ 02 24af4112 /UOID/ 02 09676114 
 			}
-			0005 /Bend coords/ 00001374 000007d0 00000f3c 000007da 00000f3c 00000938 
+			0003 /Bend coords/ 000011e4 00000938 
 			/NullObj/ 00 /UOID/ 02 354d8011 /UOID/ 02 2f61a0c2 
 		/} class AssociationChain/ 
 		/{ class CClass/ 
@@ -1999,7 +2010,7 @@ Attach is called after attachement occurs and detach is called before detachment
 			01 0069 3bf3e13d 
 			{
 				/{ class CardinalityAnchor/ 
-					01 006c 3ecbd13e 000005c8 
+					01 006c 3ecbd13e 000005d2 
 					{
 					}
 					00 0002 00 01 0002 0000 01 
@@ -2014,7 +2025,7 @@ Attach is called after attachement occurs and detach is called before detachment
 					00 7f 01 01 01 01 /NullObj/ 00 
 				/} class CardinalityAnchor/ 
 				/{ class CardinalityAnchor/ 
-					01 006c 1441a140 000005c8 
+					01 006c 1441a140 000005d2 
 					{
 					}
 					01 0002 01 01 0002 0000 03 
@@ -2034,7 +2045,7 @@ Attach is called after attachement occurs and detach is called before detachment
 			/NullObj/ 00 /UOID/ 02 2f61a0c2 /UOID/ 02 28e0e003 
 		/} class AssociationChain/ 
 		/{ class CClass/ 
-			01 000b 2d66d174 /Location/ 000017d4 00000028 00001914 0000008c 
+			01 000b 2d66d174 /Location/ 000016f8 000000f0 00001838 00000154 
 			{
 			}
 			/UOID/ 02 394d7000 00 18f88e50 
@@ -2097,15 +2108,18 @@ Attach is called after attachement occurs and detach is called before detachment
 		/} class AssociationChain/ 
 		/UOID/ 02 1f62519e 
 		/{ class Annotation/ 
-			01 0064 1b12f1a1 /Location/ 00001a0e 000002bc 00001d5f 000004e2 
+			01 0064 1b12f1a1 /Location/ 000019d2 00000230 00001d32 000004e6 
 			{
 			}
-			"Planning to change the map's key to
-Class<? extends ExpojoComponent>
-rather than it's current key \"name\".
-Using name requires each coponent to define a 'name' attribute and give it a unique value.
-We should not need to do that. The unique base class for any particular service or repository will be an appropriate key value.
+			"We have now changed the map's key to: Class<? extends ExpojoComponent>
+rather than key \"name\".
+
+Using name required each coponent to define a 'name' attribute and give it a unique value.
+We no longer need to do that. The unique base class for any particular service or repository will be an appropriate key value.
 The key will need to be specified by the developer - it could be an interface or it could be an abstract base class - the choice is up to the developer - the important thing is that whatever Class<? extends ExpojoComponent> they use for adding the component should be the same as what they use to retrieve it!
+
+
+
 "
 			0810 0002 35313032 
 		/} class Annotation/ 
@@ -2114,7 +2128,7 @@ The key will need to be specified by the developer - it could be an interface or
 			01 0069 03b311bd 
 			{
 				/{ class CardinalityAnchor/ 
-					01 006c 1b7ec1be 000013b0 
+					01 006c 1b7ec1be 0000128e 
 					{
 					}
 					00 0002 00 01 0002 0000 02 
@@ -2129,7 +2143,7 @@ The key will need to be specified by the developer - it could be an interface or
 					00 7f 01 01 01 01 /NullObj/ 00 
 				/} class CardinalityAnchor/ 
 				/{ class CardinalityAnchor/ 
-					01 006c 15b7e1c0 000013b0 
+					01 006c 15b7e1c0 0000128e 
 					{
 					}
 					01 0002 01 01 0002 0000 00 

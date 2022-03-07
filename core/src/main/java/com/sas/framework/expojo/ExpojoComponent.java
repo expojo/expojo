@@ -53,6 +53,18 @@ class ExpojoComponent
 
 // -[Methods]-
 
+
+
+/**
+ * This can be overwritten to free up any resources that have been allocated by the component.
+ * If components are pooled then close() will be called before returning the component
+ * to the pool so that it can be reused by another thread at some later time. For security
+ * reaons it is mandatory that close() disconnects any authenticated/authorized connections
+ * etc.,
+ */
+public void close() {
+}
+
 /**
  * Returns the ExpojoContext
  */
