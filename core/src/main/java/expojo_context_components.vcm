@@ -1,4 +1,4 @@
-7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 000001d5 01 0001 
+7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 000001d9 01 0001 
 /{ class ClassDiagram/ 
 	01 3afc 394d7000 
 	"Expojo Context and Components"
@@ -775,7 +775,7 @@ Structuring your repositories in this way makes your application code (GUI and m
 		/} class CClass/ 
 		/UOID/ 02 2442d008 /UOID/ 02 3af6700a /UOID/ 02 35d69007 
 		/{ class CClass/ 
-			01 000b 354d8011 /Location/ 000000aa 0000091a 0000042e 00001086 
+			01 000b 354d8011 /Location/ 000000aa 0000091a 0000042e 00001176 
 			{
 			}
 			/UOID/ 02 394d7000 00 0000006b 
@@ -803,6 +803,15 @@ See rollbackTx for more information."
 					"0"
 					/NullObj/ 00 
 				/} class Data/ 
+				/{ class Data/ 
+					01 000d 185731d5 0003 00 00 
+					"boolean"
+					"rollbackRequested"
+					"Set to true if a rollback has been requested by the app. In this case "
+					0000 01 00 7f 01 01 
+					"false"
+					/NullObj/ 00 
+				/} class Data/ 
 			}
 			{
 				/{ class Function/ 
@@ -816,10 +825,40 @@ See rollbackTx for more information."
 					""
 				/} class Function/ 
 				/{ class Function/ 
+					01 0010 33a591d6 0001 00 00 
+					"boolean"
+					"isRollbackRequested"
+					"Returns rollbackRequested"
+					0000 01 00000000 00 01 00 00 0003 
+					""
+					0000 
+					""
+				/} class Function/ 
+				/{ class Function/ 
+					01 0010 044171d7 0001 00 00 
+					"void"
+					"requestRollback"
+					"Sets rollbackRequested to true."
+					0000 01 00000000 00 01 00 00 0003 
+					""
+					0000 
+					""
+				/} class Function/ 
+				/{ class Function/ 
 					01 0010 12d8210b 0001 01 00 
 					"PersistenceProvider"
 					"get"
 					"Static method that returns the PersistenceManager of the ModelExposer attached to the current thread."
+					0000 01 00000000 00 01 00 00 0003 
+					""
+					0000 
+					""
+				/} class Function/ 
+				/{ class Function/ 
+					01 0010 239a01d8 0001 00 00 
+					"void"
+					"reset"
+					"This should never be called by the app - only ever called by the ExpojoFilter if, one day, we decide to pool and reuse ExpojoContextS/PersistentProviders."
 					0000 01 00000000 00 01 00 00 0003 
 					""
 					0000 
@@ -1126,7 +1165,7 @@ Maybe be overridden by some derived classes to perform a native ORM Collection d
 					02 0002 01 01 0001 0001 00 
 					"persistenceProvider"
 					/{ class RoleText/ 
-						01 0071 334df028 fffffe1b ffffffc9 00000006 0000000a 
+						01 0071 334df028 fffffe1b ffffffd3 00000006 00000014 
 						{
 						}
 						""

@@ -60,10 +60,46 @@ class PersistenceProvider
  * See rollbackTx for more information.
  */
 protected int depth = 0;
+
+
+
+/**
+ * Set to true if a rollback has been requested by the app. In this case 
+ */
+private boolean rollbackRequested = false;
     
     public ExpojoContext expojoContext;
 
 // -[Methods]-
+
+/**
+ * This should never be called by the app - only ever called by the ExpojoFilter if,
+ * one day, we decide to pool and reuse ExpojoContextS/PersistentProviders.
+ */
+public void reset()
+{
+	depth = 0;
+	rollbackRequested = false;
+}
+
+/**
+ * Sets rollbackRequested to true.
+ */
+public void requestRollback()
+{
+    rollbackRequested = true;
+}
+
+
+
+
+/**
+ * Returns rollbackRequested
+ */
+public boolean isRollbackRequested()
+{
+    return rollbackRequested;
+}
 
 
 

@@ -346,8 +346,13 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 				// of the original request
 				expojoContext.detachBounds();
 
-				// Commit any changes made during this init call
-				expojoContext.persistenceProvider.commitTx();
+				if (expojoContext.persistenceProvider.isRollbackRequested())
+					expojoContext.persistenceProvider.rollbackTx();
+				else
+				{
+					// Commit any changes made during this init call
+					expojoContext.persistenceProvider.commitTx();
+				}
 			}
 		}
 		catch (ServletException se)
