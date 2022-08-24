@@ -386,6 +386,10 @@ public void executeWrapped(IWrappedOperation operation, Object param1, Object pa
 			// pass it up the chain
 			throw new RuntimeException("ModelExposer: Exception thrown while performing a wrapped operation", e);
 		}
+		catch (Throwable t)
+		{
+			t.printStackTrace();
+		}
 		finally
 		{
 			// Some other Throwable - could be an Assertion thrown during unit testing - must always rollback
