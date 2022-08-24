@@ -422,7 +422,7 @@ public void commitTx()
 	if ( expojoContext.getTraceTxDepth() )
 		System.out.println("Depth: " + depth + "____commitTx____ Tx active: " + pm.currentTransaction().isActive());
 
-	if ( depth < 1 )
+	if ( depth < 1 && pm.currentTransaction().isActive() )
 	{
 		System.out.println("Commit: Illegal depth " + depth);
 		Thread.currentThread().dumpStack();
