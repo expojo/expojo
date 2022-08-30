@@ -1,14 +1,14 @@
 Welcome to expojo
 ------------------
 
-Applications built on ExPojo are built in a highly productive way and have excellent runtime performance because it eliminates the need for the most common memory hogging and CPU burning operations which normally occur with the inclusion of frameworks like Spring with its many reflection based, memory and stack abusing mechanisms required to make "the complicated obsfuscated magic" happen.
+Applications built on ExPojo are built in a highly productive way and have excellent runtime performance because it eliminates the need for the most common memory hogging and CPU burning operations which normally occur with the inclusion of frameworks like Spring with its many reflection based, memory and stack hungry mechanisms required to make "the complicated obsfuscated magic" happen.
 
 Unleash the true power of Java by making your apps Spring free!
 -------------------
 
 Traditional Java applications written in Spring are *almost* the defacto standard and so many developers just blindly follow the crowd and do things this way because "that's how we've always done it".
 
-In the modern world innovation and the ability to allow yourself to think "outside the box" and dare to make a change for the better is what sets apart modern, agile companies from their more traditional peers.
+In the modern world innovation and the ability to allow yourself to think "outside the box" and dare to make a change for the better is what sets apart productive, efficient, agile organizations from their more traditional peers.
 
 ExPojo lets you claim back your right, as a Java developer, to write "awesome, lightning fast apps!" that are not crippled by the usual interminable behind the scenes reflection and other CPU hogging "obsfuscated magic" required to perform dependency injection.
 
@@ -27,7 +27,7 @@ Like all things in life there often alternative approaches and ExPojo makes a hi
 
 # How does it work?
 
-ExPojo is extremely simple to integrate into your app. No annotations are required for every possible dependency that you need provisiosed because it doesn't need to provision them using class dependency injection. You don't even need to create the crowd of annotated dependencies as attributes at the top of each of your classes - all that ugliness and obsfuscated magic dissappears. It's all implemented in straightforward, pure Java and uses tried and proven Java and Object Oriented constructs.
+ExPojo is extremely simple to integrate into your app. No annotations are required for every possible dependency that you need provisiosed because it doesn't need to provision them using class dependency injection. You don't even need to create the crowd of annotated dependencies as attributes at the top of each of your classes - all that ugliness required to support the obsfuscated magic dissappears. It's all implemented in straightforward, pure Java and uses tried and proven type safe and blindingly fast Java and Object Oriented constructs.
 
 The way ExPojo performs its dependency provisioning is via a clever filter that you configure in your web app context, once!
 
