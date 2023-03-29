@@ -1,4 +1,4 @@
-7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 000001c7 01 0001 
+7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 000001c8 01 0001 
 /{ class ClassDiagram/ 
 	01 3afc 394d7000 
 	"Expojo Foundation, ServletFilter"
@@ -978,7 +978,7 @@ false if exposer/session affinity should be used so that the exposer is attached
 			}
 		/} class CClass/ 
 		/{ class CClass/ 
-			01 000b 2f61a0c2 /Location/ 00000c9e 00000276 00001162 0000096a 
+			01 000b 2f61a0c2 /Location/ 00000c9e 00000276 00001162 000009a6 
 			{
 			}
 			/UOID/ 02 394d7000 00 0000007a 
@@ -1149,6 +1149,17 @@ It is not necessary to override this method but if it is then be sure to call th
 					0000 01 00000000 00 01 00 00 0003 
 					"ServletContextEvent event"
 					0001 
+					""
+				/} class Function/ 
+				/{ class Function/ 
+					01 0010 0c3451c7 0001 00 00 
+					"boolean"
+					"isBadIpAddr"
+					"Returns true if the given IP address is from a 'bad' client and so the request will not be honoured in the usual way. Instead an error response with a HTML error message will be provided.
+This is called very early in the doFitler() method to short circuit request handling before many resources are allocated to the request - this should minimize the effects of DDOS attacks."
+					0000 01 00000000 00 01 00 00 0003 
+					"String ipAddr"
+					0000 
 					""
 				/} class Function/ 
 				/{ class Function/ 
@@ -1733,7 +1744,7 @@ It does mean that the developer needs to create a new application specific Expoj
 			01 0069 1aab718d 
 			{
 				/{ class CardinalityAnchor/ 
-					01 006c 3888e18e 000003f2 
+					01 006c 3888e18e 000003fc 
 					{
 					}
 					00 0002 00 01 0002 0000 03 
@@ -1748,7 +1759,7 @@ It does mean that the developer needs to create a new application specific Expoj
 					00 7f 01 01 01 01 /NullObj/ 00 
 				/} class CardinalityAnchor/ 
 				/{ class CardinalityAnchor/ 
-					01 006c 3c02d190 000003f2 
+					01 006c 3c02d190 000003fc 
 					{
 					}
 					01 0002 01 01 0002 0000 01 

@@ -16,6 +16,7 @@
  */
 package com.sas.framework.expojo.servlet;
 
+import java.io.PrintWriter;
 import java.lang.*;
 import javax.servlet.Filter;
     
@@ -196,6 +197,25 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 {
 	HttpServletRequest httpServletRequest = (HttpServletRequest)request;
 
+	String clientIpAddr = httpServletRequest.getRemoteAddr();
+	
+	// Do this as early as possible to consume the least amount of resources when under attack from
+	// bad bots/crawlers etc.,
+	if (expojoFoundation.isBadIpAddr(clientIpAddr))
+	{
+		HttpServletResponse httpServletResponse = (HttpServletResponse)response;
+
+		httpServletResponse.setContentType("text/plain");  // Set content type of the response so that jQuery knows what it can expect.
+		httpServletResponse.setCharacterEncoding("UTF-8"); // You want world domination, huh?
+		httpServletResponse.setStatus(HttpServletResponse.SC_NOT_FOUND);
+
+		PrintWriter writer = response.getWriter();
+		writer.write("IP address is possibly blacklisted by one or more services");
+
+		//((HttpServletResponse)response).sendError(HttpServletResponse.SC_NOT_FOUND, "IP address is possibly blacklisted by one or more services");
+		return;
+	}
+
 	String contextPath = httpServletRequest.getContextPath();
 	String servletPath = httpServletRequest.getServletPath();
 	
@@ -221,7 +241,7 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 	}
 	// [END]
 
-	//logWarn("doFilter: requested URL: '" + relativePath + "'");
+	//logWarn("doFilter: requested URL: '" + httpServletRequest.getServerName() + relativePath + "'");
 	
 	boolean alreadyWrapped = true;
 	ExpojoContext expojoContext = ExpojoContext.get();

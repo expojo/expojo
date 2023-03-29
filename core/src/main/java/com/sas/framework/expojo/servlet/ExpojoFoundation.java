@@ -117,6 +117,19 @@ private static final Logger logger = LogManager.getLogger(ExpojoFoundation.class
 // -[Methods]-
 
 /**
+ * Returns true if the given IP address is from a 'bad' client and so the request will
+ * not be honoured in the usual way. Instead an error response with a HTML error message
+ * will be provided.
+ * This is called very early in the doFitler() method to short circuit request handling
+ * before many resources are allocated to the request - this should minimize the effects
+ * of DDOS attacks.
+ */
+public boolean isBadIpAddr(String ipAddr)
+{
+	return false;
+}
+
+/**
  * Logs a message of the given type to System.out. This is not intended to be an exhaustive
  * logging mechanism nor can it be called directly. The implementation of this method
  * is to avoid exPOJO having any dependency on log4j or any other specific logging framework.
