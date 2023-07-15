@@ -16,6 +16,8 @@
 	<groupId>com.expojo.iam</groupId>
 	<artifactId>expojo-iam-api</artifactId>
 
+	<packaging>jar</packaging>
+
 	<name>Expojo - IAM API</name>
 
 	<dependencies>

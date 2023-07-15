@@ -14,6 +14,7 @@
 
 	<groupId>com.expojo.iam</groupId>
 	<artifactId>expojo-iam-impl-jdo</artifactId>
+	<packaging>jar</packaging>
 
 	<name>Expojo - IAM Impl JDO</name>
 
