@@ -95,7 +95,7 @@
 				
 	            <groupId>org.datanucleus</groupId>
 	            <artifactId>datanucleus-maven-plugin</artifactId>
-	            <version>5.0.2</version>
+	            <version>${datanucleus.maven.plugin.version}</version>
 	            <configuration>
 					<fork>false</fork>
                     <api>JDO</api>
