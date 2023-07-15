@@ -77,6 +77,9 @@ private void writeObject(java.io.ObjectOutputStream out)
 {
 	// Do nothing - object should not be serializable
 	// We mark it as transient but it still seems be getting serialized to the stream
+
+	if (object != null)
+		System.out.println("!!!! An attempt was made to serialize an object that has not been detached !!!! : OID: " + getId() + " Class: " +  getCls().getSimpleName());
 }
 
 /**
