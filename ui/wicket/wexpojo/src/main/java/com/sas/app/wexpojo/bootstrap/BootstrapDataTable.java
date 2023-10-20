@@ -23,6 +23,8 @@ import java.util.List;
 
 import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.*;
+import org.apache.wicket.markup.repeater.Item;
+import org.apache.wicket.model.IModel;
 
 
 // -[Class]-
@@ -48,8 +50,18 @@ class BootstrapDataTable<T,S>
 
 // -[Methods]-
 
+/**
+ * Override row creation to ensure that we set the markup output to true so that rows
+ * can be updated.
+ */
+protected Item newRowItem(String id, int index, IModel model)
+{
+	Item<T> item = new UpdateableRow<T>(id, index, model);
 
+	item.setOutputMarkupId(true);
 
+	return item;
+}
 
 /**
  * Constructs the new table
