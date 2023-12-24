@@ -55,12 +55,9 @@
 		
 		<junit.version>4.11</junit.version>
 
-		
-		<poi.version>3.11</poi.version>
-
 		<apache.derby.version>10.14.1.0</apache.derby.version>
 
-		<maven.sure-fire.version>2.21.0</maven.sure-fire.version>
+		<maven.sure-fire.version>3.2.2</maven.sure-fire.version>
 			
 	</properties>
 
@@ -153,7 +150,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.1</version>
+				<version>3.11.0</version>
 				<configuration>
 					<source>${maven.java.source}</source>
 					<target>${maven.java.target}</target>
@@ -171,22 +168,24 @@
 			</plugin>
 
 			<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-source-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.3.0</version>
 
-					<executions>
-						<execution>
-							<id>attach-sources</id>
-							<goals>
-								<goal>jar</goal>
-							</goals>
-						</execution>
-					</executions>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.6.3</version>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -227,7 +226,7 @@
 					-->
 				
 					<artifactId>maven-resources-plugin</artifactId>
-					<version>3.0.2</version>
+					<version>3.3.1</version>
 					<executions>
 						<execution>
 							<id>copy-resources</id>
