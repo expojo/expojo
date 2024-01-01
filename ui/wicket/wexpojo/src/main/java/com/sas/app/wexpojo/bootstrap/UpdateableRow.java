@@ -19,8 +19,10 @@ import org.apache.wicket.markup.repeater.Item;
 
 
 // -[KeepBeforeClass]-
-
+import org.apache.wicket.Component;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.model.IModel;
+
 
 // -[Class]-
 
@@ -47,6 +49,23 @@ class UpdateableRow<T>
 
 
 // -[Methods]-
+
+
+
+
+/**
+ * Looks for an ancestor of the given sub component that is an instance of UpdateableRow
+ * and then adds that instance to the given AjaxRequestTarget so that it gets rerendered
+ * so that the view is updated to reflect the current model state.
+ * This is intended to be used with BootstrapDataTable to provide an easy way to update
+ * just a single row in the data table.
+ */
+public static void update(AjaxRequestTarget target, Component subComponent)
+{
+	Component component = subComponent.findParent(UpdateableRow.class);
+
+	target.add(component);
+}
 
 /**
  * Constructs the object

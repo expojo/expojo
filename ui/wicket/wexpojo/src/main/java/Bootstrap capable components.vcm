@@ -1,4 +1,4 @@
-7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 0000000e 01 0001 
+7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 0000000f 01 0001 
 /{ class ClassDiagram/ 
 	01 3afc 3d15a000 
 	"Bootstrap capable components"
@@ -7,7 +7,7 @@
 	""
 	{
 		/{ class CClass/ 
-			01 000b 2e449003 /Location/ 000000d2 00000168 000002da 00000280 
+			01 000b 2e449003 /Location/ 00000096 00000168 0000029e 00000280 
 			{
 			}
 			/UOID/ 02 3d15a000 00 4097e695 
@@ -28,7 +28,7 @@
 					0002 /Bend coords/ 
 					/NullObj/ 00 0001 0000 
 					/{ class CClass/ 
-						01 000b 3a567005 /Location/ 0000005a 0000001e 00000352 00000082 
+						01 000b 3a567005 /Location/ 0000001e 0000001e 00000316 00000082 
 						{
 						}
 						/UOID/ 02 3d15a000 00 4094083b 
@@ -96,7 +96,7 @@
 		/} class CClass/ 
 		/UOID/ 02 3a567005 /UOID/ 02 313ec004 
 		/{ class CClass/ 
-			01 000b 1920900a /Location/ 000004ec 00000078 0000058c 000000dc 
+			01 000b 1920900a /Location/ 000004b0 00000078 00000550 000000dc 
 			{
 			}
 			/UOID/ 02 3d15a000 00 520cd2f1 
@@ -120,7 +120,7 @@
 			}
 		/} class CClass/ 
 		/{ class CClass/ 
-			01 000b 35ee800b /Location/ 0000046a 00000190 0000060e 00000230 
+			01 000b 35ee800b /Location/ 0000042e 00000190 000005d2 0000026c 
 			{
 			}
 			/UOID/ 02 3d15a000 00 520d1ebf 
@@ -159,6 +159,17 @@ ajaxRequestTarget.add(findParent(UpdateableRow.class));"
 					0000 
 					""
 				/} class FConstructor/ 
+				/{ class Function/ 
+					01 0010 2b5d800e 0001 01 00 
+					"void"
+					"update"
+					"Looks for an ancestor of the given sub component that is an instance of UpdateableRow and then adds that instance to the given AjaxRequestTarget so that it gets rerendered so that the view is updated to reflect the current model state.
+This is intended to be used with BootstrapDataTable to provide an easy way to update just a single row in the data table."
+					0000 01 00000000 01 01 00 00 0003 
+					"AjaxRequestTarget target, Component subComponent"
+					0000 
+					""
+				/} class Function/ 
 			}
 			/NullObj/ 00 
 			{
