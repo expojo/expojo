@@ -40,6 +40,7 @@ class ClsIdModelRef<T>
  implements IModelRef<T>
 {
 // -[KeepWithinClass]-
+private static final long serialVersionUID = -3209204803294671707L;
 
 
 // -[Fields]-
@@ -64,6 +65,24 @@ private long id;
 
 
 // -[Methods]-
+
+/**
+ * Returns true if objects are equal
+ */
+public boolean equals(Object o)
+{
+	if (this == o)
+		return true;
+	if (o == null)
+		return false;
+	if (this.getClass() != o.getClass())
+		return false;
+
+	ClsIdModelRef cimr = (ClsIdModelRef)o;
+	
+	// If same ID and same Cls then it's the same object
+	return id == cimr.getId() && cls == cimr.getCls();
+}
 
 /**
  * Returns object

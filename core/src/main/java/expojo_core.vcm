@@ -1,4 +1,4 @@
-7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 000001e9 01 0001 
+7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 000001ea 01 0001 
 /{ class ClassDiagram/ 
 	01 3afc 394d7000 
 	"Expojo Core"
@@ -935,7 +935,7 @@ IBound objects can be registered with the ModelExposer. Whenever a ModelExposer 
 			}
 		/} class CClass/ 
 		/{ class CClass/ 
-			01 000b 36835150 /Location/ 00001572 0000050a 000017ca 0000078a 
+			01 000b 36835150 /Location/ 00001540 0000050a 00001798 000007c6 
 			{
 			}
 			/UOID/ 02 394d7000 00 11d0d663 
@@ -1103,6 +1103,16 @@ We must store the class because primary key on it's own is not enough as it is u
 					"Describe here"
 					0000 01 00000000 01 01 00 00 0003 
 					""
+					0000 
+					""
+				/} class Function/ 
+				/{ class Function/ 
+					01 0010 074c61e9 0001 00 00 
+					"boolean"
+					"equals"
+					"Returns true if objects are equal"
+					0000 01 00000000 00 01 00 00 0003 
+					"Object o"
 					0000 
 					""
 				/} class Function/ 
