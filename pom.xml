@@ -50,8 +50,8 @@
 
 		
 		<!-- Miscellaneous -->		
-		<log4j.version>2.17.2</log4j.version>
-		<slf4j.version>1.7.36</slf4j.version>
+		<log4j.version>2.23.1</log4j.version>
+		<slf4j.version>2.0.13</slf4j.version>
 		
 		<junit.version>4.11</junit.version>
 
@@ -97,7 +97,7 @@
 
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-slf4j-impl</artifactId>
+			<artifactId>log4j-slf4j2-impl</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
 
