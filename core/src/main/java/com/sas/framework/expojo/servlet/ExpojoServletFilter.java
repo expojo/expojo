@@ -210,7 +210,7 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 		httpServletResponse.setStatus(HttpServletResponse.SC_NOT_FOUND);
 
 		PrintWriter writer = response.getWriter();
-		writer.write("IP address is possibly blacklisted by one or more services");
+		writer.write("IP address is possibly blacklisted by one or more services or is a crawler that appears to ignore limits specified in robots.txt");
 
 		//((HttpServletResponse)response).sendError(HttpServletResponse.SC_NOT_FOUND, "IP address is possibly blacklisted by one or more services");
 		return;
