@@ -14,17 +14,21 @@
 package com.sas.framework.iam.user;
 
 import java.lang.*;
+    
+import com.sas.framework.entity.IEntity;
 
 
 // -[KeepBeforeClass]-
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 
 // -[Class]-
 
 /**
  * Class Name : IUserRepository
- * Diagram    : User and User exposers
+ * Diagram    : Interfaces for user service and repository components
  * Project    : Entity Model Framework
  * Type       : interface
  * An interface that supplies user services such as checking if a username, password
@@ -38,10 +42,19 @@ interface IUserRepository
 // -[KeepWithinClass]-
 
 
+
 // -[Fields]-
 
 
 // -[Methods]-
+
+
+
+
+/**
+ * Return a list of all entity states.
+ */
+public abstract List<IEntity.State> getAllEntityStates();
 
 
 

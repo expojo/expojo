@@ -1,4 +1,4 @@
-7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 00000049 01 0001 
+7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 0000004f 01 0001 
 /{ class ClassDiagram/ 
 	01 3afc 26d1e000 
 	"Interfaces for user service and repository components"
@@ -131,7 +131,7 @@
 			}
 		/} class CClass/ 
 		/{ class CClass/ 
-			01 000b 16d8300e /Location/ 0000037a 00000212 00000636 000002ee 
+			01 000b 16d8300e /Location/ 0000037a 00000212 000006fe 0000032a 
 			{
 			}
 			/UOID/ 02 26d1e000 00 00000067 
@@ -164,6 +164,16 @@
 					"Collection"
 					"findAllUsers"
 					"Returns all users in the system."
+					0000 01 00000000 00 01 01 00 0003 
+					""
+					0000 
+					""
+				/} class Function/ 
+				/{ class Function/ 
+					01 0010 1f5aa04e 0001 00 00 
+					"List<IEntity.State>"
+					"getAllEntityStates"
+					"Return a list of all entity states."
 					0000 01 00000000 00 01 01 00 0003 
 					""
 					0000 
@@ -362,6 +372,44 @@ e.g. getName may return Bill Smith for many entities but for each entity the get
 			}
 			0002 /Bend coords/ 
 			/NullObj/ 00 /UOID/ 02 1a352025 /UOID/ 02 28ea6003 
+		/} class AssociationChain/ 
+		/{ class AssociationChain/ 
+			01 0069 0fece049 
+			{
+				/{ class CardinalityAnchor/ 
+					01 006c 0e9dd04a 000004b0 
+					{
+					}
+					00 0002 00 01 0002 0000 00 
+					""
+					/{ class RoleText/ 
+						01 0071 0826e04b 00000000 fffffff9 00000014 fffffffe 
+						{
+						}
+						""
+						0925 0001 74617473 /UOID/ 02 0e9dd04a 
+					/} class RoleText/ 
+					00 7f 01 01 01 01 /NullObj/ 00 
+				/} class CardinalityAnchor/ 
+				/{ class CardinalityAnchor/ 
+					01 006c 3c10d04c 000004b0 
+					{
+					}
+					01 0002 01 01 0002 0000 02 
+					""
+					/{ class RoleText/ 
+						01 0071 1e64704d 00000000 00000016 00000014 0000001b 
+						{
+						}
+						""
+						0925 0001 34313032 /UOID/ 02 3c10d04c 
+					/} class RoleText/ 
+					00 7f 01 01 01 01 /NullObj/ 00 
+				/} class CardinalityAnchor/ 
+				/UOID/ 02 0826e04b /UOID/ 02 1e64704d 
+			}
+			0002 /Bend coords/ 
+			/NullObj/ 00 /UOID/ 02 1a352025 /UOID/ 02 16d8300e 
 		/} class AssociationChain/ 
 	}
 	006e 

@@ -33,13 +33,16 @@ import org.apache.logging.log4j.LogManager;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import com.sas.framework.expojo.jdo.JdoPersistenceProvider;
 import com.sas.framework.expojo.jdo.JDOQueryResultCollection;
 
+import com.sas.framework.entity.IEntity;
+
 import com.sas.framework.iam.user.IUser;
-import com.sas.framework.iam.user.impl.User;
 
 
 // -[Class]-
@@ -68,6 +71,21 @@ private static final Logger logger = LogManager.getLogger(UserRepositoryJdo.clas
 
 
 // -[Methods]-
+
+/**
+ * Return a list of all entity states.
+ */
+public List<IEntity.State> getAllEntityStates()
+{
+	List<IEntity.State> states = new ArrayList<>();
+	
+	for(IEntity.State state: IEntity.State.values())
+	{
+		states.add(state);
+	}
+
+	return states;
+}
 
 
 

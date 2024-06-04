@@ -42,6 +42,13 @@ public abstract
 interface IEntity
 {
 // -[KeepWithinClass]-
+// WARNING: Persisted by ordinal - do not change order or insert new enumeration values before any existing values
+// i.e. always add new ones at the end of the list
+public enum State
+{
+	Active,
+	Disabled
+}
 
 
 // -[Fields]-

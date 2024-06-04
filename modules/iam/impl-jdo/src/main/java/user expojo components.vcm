@@ -1,4 +1,4 @@
-7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 00000080 01 0001 
+7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 00000081 01 0001 
 /{ class ClassDiagram/ 
 	01 3afc 26d1e000 
 	"User Expojo Components"
@@ -532,7 +532,7 @@ e.g. getName may return Bill Smith for many entities but for each entity the get
 		/} class CClass/ 
 		/UOID/ 02 21bb704a /UOID/ 02 0510b05b 
 		/{ class CClass/ 
-			01 000b 234a8068 /Location/ 000006b8 000006ae 00000974 000007c6 
+			01 000b 234a8068 /Location/ 00000654 000006cc 000009d8 00000820 
 			{
 			}
 			/UOID/ 02 26d1e000 00 375f8ac0 
@@ -633,6 +633,16 @@ e.g. getName may return Bill Smith for many entities but for each entity the get
 					"Collection"
 					"findAllUsers"
 					"Finds all users of the system."
+					0000 01 00000000 00 01 00 00 0003 
+					""
+					0000 
+					""
+				/} class Function/ 
+				/{ class Function/ 
+					01 0010 241cf080 0001 00 00 
+					"List<IEntity.State>"
+					"getAllEntityStates"
+					"Return a list of all entity states."
 					0000 01 00000000 00 01 00 00 0003 
 					""
 					0000 
