@@ -1,3 +1,5 @@
 userAccessIf.vcm ClassId base: 0
 authentication.vcm ClassId base: 0
 entity.vcm ClassId base: 0
+user repo and service components.vcm ClassId base: 0
+Association of user with a session.vcm ClassId base: 0

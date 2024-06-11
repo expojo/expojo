@@ -16,7 +16,6 @@
  */
 package com.sas.framework.expojo.servlet;
 
-import java.io.PrintWriter;
 import java.lang.*;
 import javax.servlet.Filter;
     
@@ -32,16 +31,17 @@ import javax.servlet.ServletException;
     
 import com.sas.framework.expojo.ExpojoContext;
 
-// [Added by Code Injection Wizard: Log4J Logging Support]
+// [Added by Code Injection Wizard: SLF4J Logging Support]
 // Do not edit code injected by the wizard directly in the source file as
 // as it will be overwritten during subsequent updates. 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 // -[KeepBeforeClass]-
-import java.lang.*;
 import java.util.*;
+
+import java.io.PrintWriter;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -51,7 +51,7 @@ import javax.servlet.http.*;
 
 /**
  * Class Name : ExpojoServletFilter
- * Diagram    : Expojo Servlet
+ * Diagram    : Expojo Foundation, ServletFilter
  * Project    : ExPOJO Core
  * Type       : concrete
  * A servlet filter that automatically implements dependency injection by calls to attachThread
@@ -110,10 +110,10 @@ private static boolean exposerPerRequest = false;
     
     protected ExpojoFoundation expojoFoundation;
 
-// [Added by Code Injection Wizard: Log4J Logging Support]
+// [Added by Code Injection Wizard: SLF4J Logging Support]
 // Do not edit code injected by the wizard directly in the source file as
 // as it will be overwritten during subsequent updates. 
-private static final Logger logger = LogManager.getLogger(ExpojoServletFilter.class);
+private static final Logger logger = LoggerFactory.getLogger(ExpojoServletFilter.class);
 
 
 // -[Methods]-

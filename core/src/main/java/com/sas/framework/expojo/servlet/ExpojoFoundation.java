@@ -28,11 +28,11 @@ import com.sas.framework.expojo.IWrappedOperation;
     
 import com.sas.framework.expojo.ExpojoContext;
 
-// [Added by Code Injection Wizard: Log4J Logging Support]
+// [Added by Code Injection Wizard: SLF4J Logging Support]
 // Do not edit code injected by the wizard directly in the source file as
 // as it will be overwritten during subsequent updates. 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 // -[KeepBeforeClass]-
@@ -48,7 +48,7 @@ import java.io.*;
 
 /**
  * Class Name : ExpojoFoundation
- * Diagram    : Expojo Servlet
+ * Diagram    : Expojo Foundation, ServletFilter
  * Project    : ExPOJO Core
  * Type       : abstract
  * This is the foundation of any Expojo based application and is responsible for the
@@ -108,10 +108,10 @@ protected static boolean initialized = false;
     
     protected ExpojoContextFactory expojoContextFactory;
 
-// [Added by Code Injection Wizard: Log4J Logging Support]
+// [Added by Code Injection Wizard: SLF4J Logging Support]
 // Do not edit code injected by the wizard directly in the source file as
 // as it will be overwritten during subsequent updates. 
-private static final Logger logger = LogManager.getLogger(ExpojoFoundation.class);
+private static final Logger logger = LoggerFactory.getLogger(ExpojoFoundation.class);
 
 
 // -[Methods]-

@@ -24,11 +24,11 @@ import com.sas.framework.expojo.Ex;
     
 import com.sas.framework.iam.user.expojo.UserRepository;
 
-// [Added by Code Injection Wizard: Log4J Logging Support]
+// [Added by Code Injection Wizard: SLF4J Logging Support]
 // Do not edit code injected by the wizard directly in the source file as
 // as it will be overwritten during subsequent updates. 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 // -[KeepBeforeClass]-
@@ -63,10 +63,10 @@ class SimpleAuthenticator implements IAuthenticator
  */
 private boolean noPasswordCheck = false;
 
-// [Added by Code Injection Wizard: Log4J Logging Support]
+// [Added by Code Injection Wizard: SLF4J Logging Support]
 // Do not edit code injected by the wizard directly in the source file as
 // as it will be overwritten during subsequent updates. 
-private static final Logger logger = LogManager.getLogger(SimpleAuthenticator.class);
+private static final Logger logger = LoggerFactory.getLogger(SimpleAuthenticator.class);
 
 
 // -[Methods]-

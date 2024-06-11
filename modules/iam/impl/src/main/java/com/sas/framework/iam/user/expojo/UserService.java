@@ -14,7 +14,6 @@
 package com.sas.framework.iam.user.expojo;
 
 import java.lang.*;
-
 import com.sas.framework.iam.user.IUserService;
 import com.sas.framework.expojo.ServiceComponent;
     
@@ -30,11 +29,11 @@ import com.sas.framework.iam.authentication.AuthenticationException;
     
 import com.sas.framework.iam.realm.IRealm;
 
-// [Added by Code Injection Wizard: Log4J Logging Support]
+// [Added by Code Injection Wizard: SLF4J Logging Support]
 // Do not edit code injected by the wizard directly in the source file as
 // as it will be overwritten during subsequent updates. 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 // -[KeepBeforeClass]-
@@ -62,10 +61,10 @@ class UserService extends ServiceComponent implements IUserService
 
 // -[Fields]-
 
-// [Added by Code Injection Wizard: Log4J Logging Support]
+// [Added by Code Injection Wizard: SLF4J Logging Support]
 // Do not edit code injected by the wizard directly in the source file as
 // as it will be overwritten during subsequent updates. 
-private static final Logger logger = LogManager.getLogger(UserService.class);
+private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
 
 // -[Methods]-

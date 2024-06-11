@@ -27,7 +27,7 @@ import java.util.Date;
 
 /**
  * Class Name : IUser
- * Diagram    : User and User exposers
+ * Diagram    : Interfaces for user model classes
  * Project    : Entity Model Framework
  * Type       : interface
  * Interface for all users in a system.

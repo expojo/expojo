@@ -25,7 +25,7 @@ import com.sas.framework.iam.realm.IRealm;
 
 /**
  * Class Name : IUserService
- * Diagram    : User and User exposers
+ * Diagram    : Interfaces for user service and repository components
  * Project    : Entity Model Framework
  * Type       : interface
  * User related Services.

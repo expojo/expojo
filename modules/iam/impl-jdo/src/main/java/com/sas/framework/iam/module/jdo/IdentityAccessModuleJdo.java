@@ -21,11 +21,11 @@ import com.sas.framework.expojo.ModelExposer;
 import com.sas.framework.iam.user.expojo.UserRepository;
     
 import com.sas.framework.iam.user.IUserRepository;
-import com.sas.framework.iam.user.expojo.UserRepositoryJdo;
 
 
 // -[KeepBeforeClass]-
 
+import com.sas.framework.iam.user.expojo.UserRepositoryJdo;
 
 // -[Class]-
 
