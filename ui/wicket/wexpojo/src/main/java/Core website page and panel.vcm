@@ -1,4 +1,4 @@
-7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 0000005a 01 0001 
+7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 0000005c 01 0001 
 /{ class ClassDiagram/ 
 	01 3afc 2c6bc000 
 	"Core website page and panel"
@@ -713,7 +713,7 @@ While it is possible to make any class protected by overriding isProtected() thi
 		/} class CClass/ 
 		/UOID/ 02 30672052 
 	}
-	0074 
+	0075 
 	"com\\sas\\app\\wexpojo\\ui"
 	0000 
 	/{ class GuiMgdRelationGen/ 

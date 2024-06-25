@@ -15,7 +15,7 @@
 package com.sas.app.wexpojo.bootstrap;
 
 import java.lang.*;
-import org.apache.wicket.extensions.ajax.markup.html.repeater.data.table.AjaxFallbackDefaultDataTable;
+import org.apache.wicket.extensions.markup.html.repeater.data.table.DataTable;
 
 
 // -[KeepBeforeClass]-
@@ -25,6 +25,8 @@ import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.*;
 import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.model.IModel;
+
+import org.apache.wicket.extensions.ajax.markup.html.repeater.data.table.AjaxFallbackHeadersToolbar;
 
 
 // -[Class]-
@@ -40,7 +42,7 @@ import org.apache.wicket.model.IModel;
  */
 public 
 class BootstrapDataTable<T,S>
- extends AjaxFallbackDefaultDataTable
+ extends DataTable<T,S>
 {
 // -[KeepWithinClass]-
 
@@ -82,6 +84,13 @@ public BootstrapDataTable(final String id, final List<? extends IColumn<T, S>> c
 	if (striped)
 		bootstrapTableClasses += " table-striped";
 	add(new AttributeAppender("class", bootstrapTableClasses));
+
+	
+        this.setOutputMarkupId(true);
+        this.setVersioned(false);
+        this.addTopToolbar(new StyledNavigationToolbar(this));
+        this.addTopToolbar(new AjaxFallbackHeadersToolbar(this, dataProvider));
+        this.addBottomToolbar(new NoRecordsToolbar(this));
 }
 
 }

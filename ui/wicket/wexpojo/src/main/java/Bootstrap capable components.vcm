@@ -1,4 +1,4 @@
-7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 0000000f 01 0001 
+7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 0000001b 01 0001 
 /{ class ClassDiagram/ 
 	01 3afc 3d15a000 
 	"Bootstrap capable components"
@@ -7,7 +7,7 @@
 	""
 	{
 		/{ class CClass/ 
-			01 000b 2e449003 /Location/ 00000096 00000168 0000029e 00000280 
+			01 000b 2e449003 /Location/ 00000014 00000168 0000021c 00000280 
 			{
 			}
 			/UOID/ 02 3d15a000 00 4097e695 
@@ -28,13 +28,13 @@
 					0002 /Bend coords/ 
 					/NullObj/ 00 0001 0000 
 					/{ class CClass/ 
-						01 000b 3a567005 /Location/ 0000001e 0000001e 00000316 00000082 
+						01 000b 3a567005 /Location/ 00000082 00000028 000001ae 0000008c 
 						{
 						}
 						/UOID/ 02 3d15a000 00 4094083b 
-						"AjaxFallbackDefaultDataTable"
+						"DataTable"
 						"RENAME"
-						"org\\apache\\wicket\\extensions\\ajax\\markup\\html\\repeater\\data\\table"
+						"org\\apache\\wicket\\extensions\\markup\\html\\repeater\\data\\table"
 						"Describe here"
 						"h"
 						"java"
@@ -52,7 +52,7 @@
 						}
 					/} class CClass/ 
 					00 /UOID/ 02 2e449003 
-					""
+					"T,S"
 					00 7f 
 				/} class BaseClassRef/ 
 			}
@@ -96,7 +96,7 @@
 		/} class CClass/ 
 		/UOID/ 02 3a567005 /UOID/ 02 313ec004 
 		/{ class CClass/ 
-			01 000b 1920900a /Location/ 000004b0 00000078 00000550 000000dc 
+			01 000b 1920900a /Location/ 00000906 00000028 000009a6 0000008c 
 			{
 			}
 			/UOID/ 02 3d15a000 00 520cd2f1 
@@ -120,7 +120,7 @@
 			}
 		/} class CClass/ 
 		/{ class CClass/ 
-			01 000b 35ee800b /Location/ 0000042e 00000190 000005d2 0000026c 
+			01 000b 35ee800b /Location/ 00000884 00000168 00000a28 00000244 
 			{
 			}
 			/UOID/ 02 3d15a000 00 520d1ebf 
@@ -142,7 +142,7 @@ ajaxRequestTarget.add(findParent(UpdateableRow.class));"
 					}
 					0002 /Bend coords/ 
 					/NullObj/ 00 0001 0000 /UOID/ 02 1920900a 00 /UOID/ 02 35ee800b 
-					""
+					"T"
 					00 7f 
 				/} class BaseClassRef/ 
 			}
@@ -176,8 +176,175 @@ This is intended to be used with BootstrapDataTable to provide an easy way to up
 			}
 		/} class CClass/ 
 		/UOID/ 02 131a100c 
+		/{ class CClass/ 
+			01 000b 2aeff00f /Location/ 00000244 00000168 000005f0 00000244 
+			{
+			}
+			/UOID/ 02 3d15a000 00 55f7261c 
+			"StyledNavigationToolbar"
+			"RENAME"
+			"com\\sas\\app\\wexpojo\\bootstrap"
+			"Describe here"
+			"h"
+			"java"
+			0000 
+			""
+			00 0001 0000 00 00 0000 0000 0000 00 
+			{
+				/{ class BaseClassRef/ 
+					01 006b 1e419010 
+					{
+					}
+					0002 /Bend coords/ 
+					/NullObj/ 00 0001 0000 
+					/{ class CClass/ 
+						01 000b 1b2d0011 /Location/ 000002f8 00000028 0000053c 0000008c 
+						{
+						}
+						/UOID/ 02 3d15a000 00 55f569bf 
+						"AjaxNavigationToolbar"
+						"RENAME"
+						"org\\apache\\wicket\\extensions\\ajax\\markup\\html\\repeater\\data\\table\\"
+						"Describe here"
+						"h"
+						"java"
+						0000 
+						""
+						00 0001 0000 01 00 0004 0000 0000 00 
+						{
+						}
+						{
+						}
+						{
+						}
+						/NullObj/ 00 
+						{
+						}
+					/} class CClass/ 
+					00 /UOID/ 02 2aeff00f 
+					""
+					00 7f 
+				/} class BaseClassRef/ 
+			}
+			{
+			}
+			{
+				/{ class FConstructor/ 
+					01 000c 11231012 0001 00 00 
+					"no type"
+					"Constructor"
+					"Constructs the object"
+					0000 01 00000000 00 00 00 00 0000 
+					"DataTable<?,?> table"
+					0000 
+					""
+				/} class FConstructor/ 
+				/{ class Function/ 
+					01 0010 1345b019 0001 00 00 
+					"PagingNavigator"
+					"newPagingNavigator"
+					"Describe here"
+					0000 01 00000000 00 01 00 00 0003 
+					"String navigatorId, final DataTable<?, ?> table"
+					0000 
+					""
+				/} class Function/ 
+			}
+			/NullObj/ 00 
+			{
+			}
+		/} class CClass/ 
+		/UOID/ 02 1b2d0011 /UOID/ 02 1e419010 
+		/{ class CClass/ 
+			01 000b 25144014 /Location/ 0000062c 00000028 00000848 0000008c 
+			{
+			}
+			/UOID/ 02 3d15a000 00 55f6f22f 
+			"AjaxPagingNavigator"
+			"RENAME"
+			"org\\apache\\wicket\\ajax\\markup\\html\\navigation\\paging"
+			"Describe here"
+			"h"
+			"java"
+			0000 
+			""
+			00 0001 0000 01 00 0004 0000 0000 00 
+			{
+			}
+			{
+			}
+			{
+			}
+			/NullObj/ 00 
+			{
+			}
+		/} class CClass/ 
+		/{ class CClass/ 
+			01 000b 3c353015 /Location/ 00000618 00000168 0000085c 00000280 
+			{
+			}
+			/UOID/ 02 3d15a000 00 55f45c8c 
+			"StyledPagingNavigator"
+			"RENAME"
+			"com\\sas\\app\\wexpojo\\bootstrap"
+			"Describe here"
+			"h"
+			"java"
+			0000 
+			""
+			00 0001 0000 00 00 0000 0000 0000 00 
+			{
+				/{ class BaseClassRef/ 
+					01 006b 05514016 
+					{
+					}
+					0002 /Bend coords/ 
+					/NullObj/ 00 0001 0000 /UOID/ 02 25144014 00 /UOID/ 02 3c353015 
+					""
+					00 7f 
+				/} class BaseClassRef/ 
+			}
+			{
+			}
+			{
+				/{ class FConstructor/ 
+					01 000c 2615b017 0001 00 00 
+					"no type"
+					"Constructor"
+					"Constructs the object"
+					0000 01 00000000 00 00 00 00 0000 
+					"String id, IPageable pageable"
+					0000 
+					""
+				/} class FConstructor/ 
+				/{ class FConstructor/ 
+					01 000c 125b8018 0001 00 00 
+					"no type"
+					"Constructor"
+					"Constructs the object"
+					0000 01 00000000 00 00 00 00 0000 
+					"String id, IPageable pageable, IPagingLabelProvider labelProvider"
+					0000 
+					""
+				/} class FConstructor/ 
+				/{ class Function/ 
+					01 0010 2f54501a 0001 00 00 
+					"String"
+					"getVariation"
+					"Returns a variation based on the organization ID."
+					0000 01 00000000 00 01 00 00 0003 
+					""
+					0000 
+					""
+				/} class Function/ 
+			}
+			/NullObj/ 00 
+			{
+			}
+		/} class CClass/ 
+		/UOID/ 02 05514016 
 	}
-	0068 
+	006c 
 	"com\\sas\\app\\wexpojo\\bootstrap"
 	0000 
 	/{ class OODBGenerator/ 

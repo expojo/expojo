@@ -40,7 +40,7 @@ import org.apache.wicket.model.IModel;
  */
 public 
 class UpdateableRow<T>
- extends Item
+ extends Item<T>
 {
 // -[KeepWithinClass]-
 
