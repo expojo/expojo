@@ -52,11 +52,14 @@ class BootstrapDataTable<T,S>
 
 // -[Methods]-
 
+
+
+
 /**
  * Override row creation to ensure that we set the markup output to true so that rows
  * can be updated.
  */
-protected Item newRowItem(String id, int index, IModel model)
+protected Item<T> newRowItem(String id, int index, IModel<T> model)
 {
 	Item<T> item = new UpdateableRow<T>(id, index, model);
 

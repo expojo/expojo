@@ -58,8 +58,8 @@ public PagingNavigator newPagingNavigator(String navigatorId, final DataTable<?,
 		private static final long serialVersionUID = 1L;
 
 		protected void onAjaxEvent(AjaxRequestTarget target)
-	    {
-            target.add(new Component[]{table});
+		{
+			target.add(new Component[]{table});
 		}
 	};
 }
