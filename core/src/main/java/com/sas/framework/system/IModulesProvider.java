@@ -40,6 +40,16 @@ public abstract
 interface IModulesProvider
 {
 // -[KeepWithinClass]-
+// Note: do not change the ordering of these as they correspond to
+// a set of similar static ints with assigned values so the ordinal
+// of these will match the value of each static int if ordering is preserved
+public enum Instance
+{
+	Prod,
+	Test,
+	Dev,
+	Int
+}
 
 
 // -[Fields]-
