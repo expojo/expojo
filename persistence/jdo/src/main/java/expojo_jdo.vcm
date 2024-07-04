@@ -1,4 +1,4 @@
-7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 00000155 01 0001 
+7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 00000156 01 0001 
 /{ class ClassDiagram/ 
 	01 3afc 394d7000 
 	"Expojo JDO specific classes"
@@ -863,7 +863,7 @@ See rollbackTx for more information."
 		/} class CClass/ 
 		/UOID/ 02 2442d008 /UOID/ 02 3af6700a /UOID/ 02 35d69007 /UOID/ 02 354d8011 /UOID/ 02 0cd51010 
 		/{ class CClass/ 
-			01 000b 35d76012 /Location/ 00000b86 00000514 00000ffa 00000848 
+			01 000b 35d76012 /Location/ 00000b86 00000514 00000ffa 00000884 
 			{
 			}
 			/UOID/ 02 394d7000 00 0000006c 
@@ -999,6 +999,16 @@ This is not used by the model exposer itself but can be used by other classes to
 					"void"
 					"init"
 					"Initializes the model exposer."
+					0000 01 00000000 00 01 00 00 0003 
+					"ClassLoader classLoader"
+					0000 
+					""
+				/} class Function/ 
+				/{ class Function/ 
+					01 0010 30dc0155 0001 00 00 
+					"void"
+					"init"
+					"Initializes with a ClassLoader taken from JdoPersistenceManager"
 					0000 01 00000000 00 01 00 00 0003 
 					""
 					0000 
@@ -1204,7 +1214,7 @@ This is not used by the model exposer itself but can be used by other classes to
 			/NullObj/ 00 /UOID/ 02 3ea30009 /UOID/ 02 28e0e003 
 		/} class AssociationChain/ 
 		/{ class CClass/ 
-			01 000b 2127c033 /Location/ 00000cee 0000091a 00000fe6 000009ba 
+			01 000b 2127c033 /Location/ 00000d02 00000910 00000ffa 000009b0 
 			{
 			}
 			/UOID/ 02 394d7000 00 0000006d 
@@ -1248,7 +1258,7 @@ This is not used by the model exposer itself but can be used by other classes to
 		/} class CClass/ 
 		/UOID/ 02 0fa46034 
 		/{ class CClass/ 
-			01 000b 1443b03b /Location/ 0000097e 0000091a 00000c76 000009ba 
+			01 000b 1443b03b /Location/ 00000988 00000910 00000c80 000009b0 
 			{
 			}
 			/UOID/ 02 394d7000 00 0000006e 

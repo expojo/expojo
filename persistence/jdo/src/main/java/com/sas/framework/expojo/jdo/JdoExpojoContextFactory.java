@@ -65,6 +65,14 @@ protected PersistenceManagerFactory pmf = null;
 // -[Methods]-
 
 /**
+ * Initializes with a ClassLoader taken from JdoPersistenceManager
+ */
+public void init()
+{
+	init(JdoPersistenceProvider.class.getClassLoader());
+}
+
+/**
  * returns true if it is safe to proceed with a detach.
  */
 public boolean isSafeToDetach(ModelRef modelRef)
@@ -187,7 +195,7 @@ public void customizeProperties(Properties properties)
 /**
  * Initializes the model exposer.
  */
-public void init()
+public void init(ClassLoader classLoader)
 {
 	if ( pmf == null )
 	{
@@ -199,7 +207,7 @@ public void init()
 			
 			ExpojoFoundation.sLog(ExpojoFoundation.LT_INFO, "JdoModelExposerFactory.init: Using properties file: " + propertiesFilename);
 			
-			InputStream is = JdoPersistenceProvider.class.getClassLoader().getResourceAsStream(propertiesFilename);
+			InputStream is = classLoader.getResourceAsStream(propertiesFilename);
 		
 			if (is == null)
 			{
@@ -209,6 +217,8 @@ public void init()
 			properties.load(is);
 			
 			customizeProperties(properties);
+			
+			properties.put("datanucleus.primaryClassLoader", classLoader);
 
 			pmf = JDOHelper.getPersistenceManagerFactory(properties);		
 		}

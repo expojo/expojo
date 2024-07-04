@@ -90,6 +90,14 @@ private static ExpojoContextFactory self;
 
 // -[Methods]-
 
+/**
+ * Calls init(ClassLoader ) with a default classloader.
+ */
+public void init()
+{
+	init(getClass().getClassLoader());
+}
+
 
 
 
@@ -168,9 +176,9 @@ public final Collection<IModule> getModules()
 
 
 /**
- * Initializes the model exposer
+ * Initializes the model exposer, providing the ClassLoader to use
  */
-public abstract void init();
+public abstract void init(ClassLoader classLoader);
 
 
 

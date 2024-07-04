@@ -1,4 +1,4 @@
-7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 000001ea 01 0001 
+7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 000001eb 01 0001 
 /{ class ClassDiagram/ 
 	01 3afc 394d7000 
 	"Expojo Core"
@@ -303,7 +303,7 @@ A future possible enhancement is to add an optional \"free persistence provider'
 			/NullObj/ 00 /UOID/ 02 28e0e003 /UOID/ 02 2442d008 
 		/} class AssociationChain/ 
 		/{ class CClass/ 
-			01 000b 0ab71044 /Location/ 00000870 0000071c 00000ce4 00000bb8 
+			01 000b 0ab71044 /Location/ 00000870 0000071c 00000ce4 00000bf4 
 			{
 			}
 			/UOID/ 02 394d7000 00 0000006f 
@@ -366,8 +366,18 @@ This is not used by the model exposer itself but can be used by other classes to
 					01 0010 3786b16f 0001 00 00 
 					"void"
 					"init"
-					"Initializes the model exposer"
+					"Initializes the model exposer, providing the ClassLoader to use"
 					0000 01 00000000 00 01 01 00 0003 
+					"ClassLoader classLoader"
+					0000 
+					""
+				/} class Function/ 
+				/{ class Function/ 
+					01 0010 2f61f1ea 0001 00 00 
+					"void"
+					"init"
+					"Calls init(ClassLoader ) with a default classloader."
+					0000 01 00000000 00 01 00 00 0003 
 					""
 					0000 
 					""
