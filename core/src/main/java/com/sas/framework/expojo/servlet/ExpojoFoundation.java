@@ -136,6 +136,8 @@ public boolean isBadIpAddr(String ipAddr)
  */
 private static void logToStdOut(int logType, String msg)
 {
+	// NOTE: SLF4J could now provide the "Logging Framework agnostic" strategy we are seeking here
+
 	String level;
 
 	switch(logType)
