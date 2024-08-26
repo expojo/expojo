@@ -136,7 +136,13 @@ public boolean equals(Object o)
 			ExModelRef<T> other = ((ExModelRef<T>)o);
 			T myObject = getObjectNoRetrieve();
 
-			if ( other.getObject() == null || myObject == null )
+			T otherObject = other.getObjectNoRetrieve();
+			T otherRetrievedObject = other.getObject();
+			
+			if (otherObject == null && otherRetrievedObject != null)
+				logger.error("A potentially dangerous object retrieval has occurred!!!");
+				
+			if ( otherRetrievedObject == null || myObject == null )
 				return false;
 
 			if ( other.getObject().hashCode() != myObject.hashCode() )
