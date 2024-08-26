@@ -7,7 +7,7 @@
 	""
 	{
 		/{ class CClass/ 
-			01 000b 358c5003 /Location/ 00000104 0000019a 000002f8 0000023a 
+			01 000b 358c5003 /Location/ 0000003c 000001a4 00000230 00000244 
 			{
 			}
 			/UOID/ 02 34c1f000 00 37bb04a9 
@@ -28,11 +28,11 @@
 					0002 /Bend coords/ 
 					/NullObj/ 00 0001 0000 
 					/{ class CClass/ 
-						01 000b 1087a005 /Location/ 0000001e 0000001e 00000172 00000082 
+						01 000b 1087a005 /Location/ 0000001e 0000001e 0000024e 00000082 
 						{
 						}
 						/UOID/ 02 34c1f000 00 37b86cb3 
-						"ExModelRef"
+						"NonCachingModelRef"
 						"RENAME"
 						"com\\sas\\framework\\expojo"
 						"Describe here"
@@ -40,7 +40,7 @@
 						"java"
 						0001 
 						"T"
-						01 0001 0000 01 00 0004 0000 0000 00 
+						00 0001 0000 01 00 0004 0000 0000 00 
 						{
 						}
 						{
@@ -308,7 +308,7 @@
 		/} class CClass/ 
 		/UOID/ 02 285b001a /UOID/ 02 3e8ee019 /UOID/ 02 3517801c 
 	}
-	0069 
+	006a 
 	"com\\sas\\app\\wexpojo\\modelref"
 	0000 
 	/{ class OODBGenerator/ 

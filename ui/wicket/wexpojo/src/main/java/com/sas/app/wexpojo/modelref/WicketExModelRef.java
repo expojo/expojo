@@ -15,7 +15,7 @@
 package com.sas.app.wexpojo.modelref;
 
 import java.lang.*;
-import com.sas.framework.expojo.ExModelRef;
+import com.sas.framework.expojo.NonCachingModelRef;
 import org.apache.wicket.model.IModel;
 
 
@@ -36,7 +36,7 @@ import org.apache.wicket.model.IModel;
  */
 public 
 class WicketExModelRef<T>
- extends ExModelRef<T> implements IModel<T>
+ extends NonCachingModelRef<T> implements IModel<T>
 {
 // -[KeepWithinClass]-
 
