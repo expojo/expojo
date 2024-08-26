@@ -85,12 +85,13 @@ public boolean isSafeToDetach(ModelRef modelRef)
 	// if the object is not null and it's either persistent or already detached, we null the object reference and avoid
 	// any stale object problems.
 
-	Object object = modelRef.getObject();
-	
-	boolean exPojoDetachable = JDOHelper.isPersistent(object) || JDOHelper.isDetached(object);
+	// Do no reload an already detached object!
+	Object object = modelRef.getObjectNoRetrieve();
 	
 	if (object != null )
 	{
+		boolean exPojoDetachable = JDOHelper.isPersistent(object) || JDOHelper.isDetached(object);
+
 		if ( ExpojoServletFilter.isExposerPerRequestMode() && exPojoDetachable)
 		{
 			safeToDetach = true;
