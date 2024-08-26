@@ -19,6 +19,12 @@ package com.sas.framework.expojo;
 import java.lang.*;
 import com.sas.framework.expojo.ClsIdModelRef;
 
+// [Added by Code Injection Wizard: SLF4J Logging Support]
+// Do not edit code injected by the wizard directly in the source file as
+// as it will be overwritten during subsequent updates. 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 // -[KeepBeforeClass]-
 
@@ -56,6 +62,11 @@ public static final long serialVersionUID = 1L;
  */
 private transient T object;
 
+// [Added by Code Injection Wizard: SLF4J Logging Support]
+// Do not edit code injected by the wizard directly in the source file as
+// as it will be overwritten during subsequent updates. 
+private static final Logger logger = LoggerFactory.getLogger(ModelRef.class);
+
 
 // -[Methods]-
 
@@ -73,13 +84,16 @@ private void readObject(java.io.ObjectInputStream stream)
  * when debugging streaming of model objects in the entity framework
  */
 private void writeObject(java.io.ObjectOutputStream out)
-  throws IOException, ClassNotFoundException
+  throws IOException
 {
 	// Do nothing - object should not be serializable
 	// We mark it as transient but it still seems be getting serialized to the stream
 
 	if (object != null)
-		System.out.println("!!!! An attempt was made to serialize an object that has not been detached !!!! : OID: " + getId() + " Class: " +  getCls().getSimpleName());
+	{
+		// This class is not used for Mutable model refs so attempting to serialize a non null object is definitely an issue here
+		logger.warn("!!!! An attempt was made to serialize an object that has not been detached !!!! : OID: " + getId() + " Class: " +  getCls().getSimpleName());
+	}
 }
 
 /**
