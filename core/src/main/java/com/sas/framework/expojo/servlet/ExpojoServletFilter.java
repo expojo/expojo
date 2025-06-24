@@ -24,7 +24,8 @@ import com.sas.framework.expojo.ModelExposer;
 import javax.servlet.ServletContext;
     
 import javax.servlet.ServletContextEvent;
-    
+
+import com.sas.framework.expojo.ThreadBindListener;
 import com.sas.framework.expojo.servlet.ExpojoFoundation;
     
 import javax.servlet.ServletException;
@@ -421,6 +422,10 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 	
 	if (exposerPerRequest && !alreadyWrapped)
 	{
+		// If there is an Expojo close listener then notify it here that the
+		// transaction associated with it has either committed or rolled back
+		expojoContext.close();
+	
 		//logInfo("doFilter: destroying ExpojoContext");
 		expojoContext.destroy();
 	}

@@ -1,4 +1,4 @@
-7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 000001d9 01 0001 
+7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 000001e2 01 0001 
 /{ class ClassDiagram/ 
 	01 3afc 394d7000 
 	"Expojo Context and Components"
@@ -7,7 +7,7 @@
 	"Chris Colman"
 	{
 		/{ class CClass/ 
-			01 000b 28e0e003 /Location/ 0000001e 0000001e 00000532 0000083e 
+			01 000b 28e0e003 /Location/ 0000001e 0000001e 00000532 000008b6 
 			{
 			}
 			/UOID/ 02 394d7000 00 00000065 
@@ -598,6 +598,32 @@ Should make a shorthand form available:
 IMyRepo repo = Ex.get(IMyRepo.class);"
 					0000 01 00000000 00 01 00 00 0003 
 					"Class<C> cls"
+					0000 
+					""
+				/} class Function/ 
+				/{ class Function/ 
+					01 0010 0fa171e0 0001 00 00 
+					"boolean"
+					"registerExCloseListener"
+					"Registers an IExCloseListener that will be notified whenever the transaction associated with this ExpojoContext is either committed or rolledback.
+
+This method performs synchronized access using iExCloseListener as the mutex object. If it finds that there is already a listener then it returns false otherwise true.
+
+For a typical use case the caller would not proceed to perform any processing if false is returned as it would mean that another thread has initiated action associated with this mutex (iExCloseListener) and the action should be allowed to complete before another action is initiated using the same mutex.
+
+The mutex may be a particular UI component such as a button. In a scalable app with multiple instances running on different servers a more sophisticated mechanisms may be required."
+					0000 01 00000000 00 01 00 00 0003 
+					"IExCloseListener iExCloseListener"
+					0000 
+					""
+				/} class Function/ 
+				/{ class Function/ 
+					01 0010 0c8881e1 0001 00 00 
+					"void"
+					"close"
+					"If there is an IExCloseListener then it will be notified."
+					0000 01 00000000 00 01 00 00 0003 
+					""
 					0000 
 					""
 				/} class Function/ 
@@ -1851,7 +1877,7 @@ servlets so that the ModelExposer is available to any of your code via ModelExpo
 			/NullObj/ 00 /UOID/ 02 28e0e003 /UOID/ 02 2f61a0c2 
 		/} class AssociationChain/ 
 		/{ class CClass/ 
-			01 000b 13a2f101 /Location/ 0000091a 00000708 00000b0e 000007e4 
+			01 000b 13a2f101 /Location/ 0000091a 000006cc 00000b0e 000007a8 
 			{
 			}
 			/UOID/ 02 394d7000 00 01e6308c 
@@ -1901,7 +1927,7 @@ Attach is called after attachement occurs and detach is called before detachment
 			01 0069 3eec6104 
 			{
 				/{ class CardinalityAnchor/ 
-					01 006c 1733b105 00000758 
+					01 006c 1733b105 00000712 
 					{
 					}
 					00 0002 00 01 0002 0000 01 
@@ -1916,7 +1942,7 @@ Attach is called after attachement occurs and detach is called before detachment
 					00 7f 01 01 01 01 /NullObj/ 00 
 				/} class CardinalityAnchor/ 
 				/{ class CardinalityAnchor/ 
-					01 006c 25e09107 00000758 
+					01 006c 25e09107 00000712 
 					{
 					}
 					01 0000 01 01 0002 0001 03 
@@ -2202,7 +2228,7 @@ The key will need to be specified by the developer - it could be an interface or
 			/NullObj/ 00 /UOID/ 02 2f61a0c2 /UOID/ 02 1f62519e 
 		/} class AssociationChain/ 
 		/{ class CClass/ 
-			01 000b 362951cf /Location/ 000007bc 000000c8 00000a14 000001e0 
+			01 000b 362951cf /Location/ 00000744 00000046 0000099c 0000015e 
 			{
 			}
 			/UOID/ 02 394d7000 00 375b9227 
@@ -2275,8 +2301,80 @@ IMyRepo repo = Ex.c(IMyRepo.class);"
 			}
 		/} class CClass/ 
 		/UOID/ 02 20dd51d1 
+		/{ class CClass/ 
+			01 000b 00e0c1d9 /Location/ 0000091a 000007e4 00000ad2 00000884 
+			{
+			}
+			/UOID/ 02 394d7000 00 5ba3c623 
+			"IExCloseListener"
+			"RENAME"
+			"com\\sas\\framework\\expojo"
+			"Called when the current transaction is either committed or rolled back."
+			"h"
+			"java"
+			0002 
+			""
+			00 0001 0001 00 00 0000 0000 0000 00 
+			{
+			}
+			{
+			}
+			{
+				/{ class Function/ 
+					01 0010 0422b1df 0001 00 00 
+					"void"
+					"exClosed"
+					"Called when the current transaction is closed i.e. any DB changed have been committed or rollback."
+					0000 01 00000000 00 01 01 00 0003 
+					""
+					0000 
+					""
+				/} class Function/ 
+			}
+			/NullObj/ 00 
+			{
+			}
+		/} class CClass/ 
+		/{ class AssociationChain/ 
+			01 0069 12d521da 
+			{
+				/{ class CardinalityAnchor/ 
+					01 006c 2044a1db 000007ee 
+					{
+					}
+					00 0002 00 01 0002 0000 01 
+					""
+					/{ class RoleText/ 
+						01 0071 2d05e1dc 00000014 00000003 00000028 00000008 
+						{
+						}
+						""
+						0925 0001 00000000 /UOID/ 02 2044a1db 
+					/} class RoleText/ 
+					00 7f 01 01 01 01 /NullObj/ 00 
+				/} class CardinalityAnchor/ 
+				/{ class CardinalityAnchor/ 
+					01 006c 2594a1dd 000007ee 
+					{
+					}
+					01 0000 01 01 0002 0001 03 
+					"exCloseListener"
+					/{ class RoleText/ 
+						01 0071 03d751de fffffdb6 ffffffa9 ffffff8f ffffffea 
+						{
+						}
+						""
+						0925 0001 00000000 /UOID/ 02 2594a1dd 
+					/} class RoleText/ 
+					00 7f 01 01 01 01 /NullObj/ 00 
+				/} class CardinalityAnchor/ 
+				/UOID/ 02 2d05e1dc /UOID/ 02 03d751de 
+			}
+			0002 /Bend coords/ 
+			/NullObj/ 00 /UOID/ 02 00e0c1d9 /UOID/ 02 28e0e003 
+		/} class AssociationChain/ 
 	}
-	008c 
+	008d 
 	"com\\sas\\framework\\expojo"
 	0000 
 	/{ class OODBGenerator/ 

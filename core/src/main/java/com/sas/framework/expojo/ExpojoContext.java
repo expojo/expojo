@@ -29,6 +29,8 @@ import com.sas.framework.expojo.IWrappedOperation;
     
 import com.sas.framework.expojo.servlet.ExpojoFoundation;
     
+import com.sas.framework.expojo.IExCloseListener;
+    
 import com.sas.framework.expojo.servlet.ExpojoFoundation;
 
 // -[KeepBeforeClass]-
@@ -159,8 +161,57 @@ private WeakHashMap<IBound, Integer> boundRegistrations;
     protected HashMap<Object, ExpojoComponent> components;
     
     protected ThreadBindListener threadBindListener;
+    
+    protected IExCloseListener exCloseListener;
 
 // -[Methods]-
+
+/**
+ * If there is an IExCloseListener then it will be notified.
+ */
+public void close()
+{
+	if (exCloseListener != null)
+	{
+		exCloseListener.exClosed();
+		
+		// Deregister
+		exCloseListener = null;
+	}
+}
+
+
+
+
+/**
+ * Registers an IExCloseListener that will be notified whenever the transaction associated
+ * with this ExpojoContext is either committed or rolledback.
+ * 
+ * This method performs synchronized access using iExCloseListener as the mutex object.
+ * If it finds that there is already a listener then it returns false otherwise true.
+ * 
+ * For a typical use case the caller would not proceed to perform any processing if false
+ * is returned as it would mean that another thread has initiated action associated with
+ * this mutex (iExCloseListener) and the action should be allowed to complete before
+ * another action is initiated using the same mutex.
+ * 
+ * The mutex may be a particular UI component such as a button. In a scalable app with
+ * multiple instances running on different servers a more sophisticated mechanisms may
+ * be required.
+ */
+public boolean registerExCloseListener(IExCloseListener iExCloseListener)
+{
+	synchronized(iExCloseListener)
+	{
+		if (exCloseListener != null)
+			return false;
+			
+		exCloseListener = iExCloseListener;
+		
+		return true;
+	}
+		
+}
 
 
 
@@ -396,7 +447,11 @@ public void executeWrapped(IWrappedOperation operation, Object param1, Object pa
 			// any active transaction
 			if ( pp.hasActiveTx() )
 				pp.rollbackTx();
-		
+
+			// If there is an Expojo close listener then notify it here that the
+			// transaction associated with it has either committed or rolled back
+			close();
+
 			detachThread();
 		}
 	}

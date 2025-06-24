@@ -1,4 +1,4 @@
-7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 0000001b 01 0001 
+7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 0000001e 01 0001 
 /{ class ClassDiagram/ 
 	01 3afc 3d15a000 
 	"Bootstrap capable components"
@@ -7,7 +7,7 @@
 	""
 	{
 		/{ class CClass/ 
-			01 000b 2e449003 /Location/ 00000000 0000015e 00000244 00000276 
+			01 000b 2e449003 /Location/ 0000001e 00000168 0000042e 00000334 
 			{
 			}
 			/UOID/ 02 3d15a000 00 4097e695 
@@ -28,7 +28,7 @@
 					0002 /Bend coords/ 
 					/NullObj/ 00 0001 0000 
 					/{ class CClass/ 
-						01 000b 3a567005 /Location/ 0000008c 0000001e 000001b8 00000082 
+						01 000b 3a567005 /Location/ 00000190 0000001e 000002bc 00000082 
 						{
 						}
 						/UOID/ 02 3d15a000 00 4094083b 
@@ -57,6 +57,15 @@
 				/} class BaseClassRef/ 
 			}
 			{
+				/{ class Data/ 
+					01 000d 142fe01c 0003 00 00 
+					"DataGridView<T>"
+					"protectedDataGridView"
+					"Holds reference to the DataGridView that was created."
+					0000 01 00 7f 01 01 
+					""
+					/NullObj/ 00 
+				/} class Data/ 
 			}
 			{
 				/{ class FConstructor/ 
@@ -89,6 +98,26 @@
 					0000 
 					""
 				/} class Function/ 
+				/{ class Function/ 
+					01 0010 142f201b 0001 00 00 
+					"ListItem<T>"
+					"findListItem"
+					"Find the ListItem associated with the given modelObject."
+					0000 01 00000000 01 01 00 00 0003 
+					"T modelObject"
+					0000 
+					""
+				/} class Function/ 
+				/{ class Function/ 
+					01 0010 23a6701d 0001 00 00 
+					"DataGridView<T>"
+					"newDataGridView"
+					"Calls base class to create the DataGridView but maintains a reference to it so that it can be used by this derived class."
+					0000 01 00000000 01 01 00 00 0003 
+					"String id, List<? extends IColumn<T, S>> columns, IDataProvider<T> dataProvider"
+					0000 
+					""
+				/} class Function/ 
 			}
 			/NullObj/ 00 
 			{
@@ -96,7 +125,7 @@
 		/} class CClass/ 
 		/UOID/ 02 3a567005 /UOID/ 02 313ec004 
 		/{ class CClass/ 
-			01 000b 1920900a /Location/ 00000910 0000001e 000009b0 00000082 
+			01 000b 1920900a /Location/ 00000c62 00000028 00000d02 0000008c 
 			{
 			}
 			/UOID/ 02 3d15a000 00 520cd2f1 
@@ -120,7 +149,7 @@
 			}
 		/} class CClass/ 
 		/{ class CClass/ 
-			01 000b 35ee800b /Location/ 0000088e 0000015e 00000a32 0000023a 
+			01 000b 35ee800b /Location/ 00000be0 00000168 00000d84 00000244 
 			{
 			}
 			/UOID/ 02 3d15a000 00 520d1ebf 
@@ -177,7 +206,7 @@ This is intended to be used with BootstrapDataTable to provide an easy way to up
 		/} class CClass/ 
 		/UOID/ 02 131a100c 
 		/{ class CClass/ 
-			01 000b 2aeff00f /Location/ 00000258 0000015e 00000604 0000023a 
+			01 000b 2aeff00f /Location/ 0000056e 00000168 0000091a 00000244 
 			{
 			}
 			/UOID/ 02 3d15a000 00 55f7261c 
@@ -198,7 +227,7 @@ This is intended to be used with BootstrapDataTable to provide an easy way to up
 					0002 /Bend coords/ 
 					/NullObj/ 00 0001 0000 
 					/{ class CClass/ 
-						01 000b 1b2d0011 /Location/ 0000030c 0000001e 00000550 00000082 
+						01 000b 1b2d0011 /Location/ 00000622 00000028 00000866 0000008c 
 						{
 						}
 						/UOID/ 02 3d15a000 00 55f569bf 
@@ -256,7 +285,7 @@ This is intended to be used with BootstrapDataTable to provide an easy way to up
 		/} class CClass/ 
 		/UOID/ 02 1b2d0011 /UOID/ 02 1e419010 
 		/{ class CClass/ 
-			01 000b 25144014 /Location/ 00000636 0000001e 00000852 00000082 
+			01 000b 25144014 /Location/ 0000096a 00000028 00000b86 0000008c 
 			{
 			}
 			/UOID/ 02 3d15a000 00 55f6f22f 
@@ -280,7 +309,7 @@ This is intended to be used with BootstrapDataTable to provide an easy way to up
 			}
 		/} class CClass/ 
 		/{ class CClass/ 
-			01 000b 3c353015 /Location/ 00000622 0000015e 00000866 00000276 
+			01 000b 3c353015 /Location/ 00000956 00000168 00000b9a 00000280 
 			{
 			}
 			/UOID/ 02 3d15a000 00 55f45c8c 

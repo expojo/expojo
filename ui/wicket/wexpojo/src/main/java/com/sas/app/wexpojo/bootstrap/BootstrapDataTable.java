@@ -19,13 +19,18 @@ import org.apache.wicket.extensions.markup.html.repeater.data.table.DataTable;
 
 
 // -[KeepBeforeClass]-
+import java.util.Iterator;
 import java.util.List;
 
+import org.apache.wicket.Component;
 import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.*;
+import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.repeater.Item;
+import org.apache.wicket.markup.repeater.data.IDataProvider;
 import org.apache.wicket.model.IModel;
 
+import org.apache.wicket.extensions.markup.html.repeater.data.grid.DataGridView;
 import org.apache.wicket.extensions.ajax.markup.html.repeater.data.table.AjaxFallbackHeadersToolbar;
 
 
@@ -50,7 +55,50 @@ class BootstrapDataTable<T,S>
 // -[Fields]-
 
 
+
+/**
+ * Holds reference to the DataGridView that was created.
+ */
+private DataGridView<T> protectedDataGridView;
+
+
 // -[Methods]-
+
+/**
+ * Calls base class to create the DataGridView but maintains a reference to it so that
+ * it can be used by this derived class.
+ */
+public DataGridView<T> newDataGridView(String id, List<? extends IColumn<T, S>> columns, IDataProvider<T> dataProvider)
+{
+	protectedDataGridView = super.newDataGridView(id, columns, dataProvider);
+	return protectedDataGridView;
+}
+
+
+
+
+/**
+ * Find the ListItem associated with the given modelObject.
+ */
+public ListItem<T> findListItem(T modelObject)
+{
+	ListItem<T> found = null;
+
+	Iterator<Item<T>> components = protectedDataGridView.getItems();
+
+	while (components.hasNext())
+	{
+		ListItem<T> listItem = components.next();
+		T t = listItem.getModelObject();
+		if (t.equals(modelObject))
+		{
+			found = listItem;
+			break;
+		}
+	}
+
+	return found;
+}
 
 
 
