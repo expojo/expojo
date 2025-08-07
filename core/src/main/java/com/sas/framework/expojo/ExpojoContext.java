@@ -415,6 +415,12 @@ public void executeWrapped(IWrappedOperation operation, Object param1, Object pa
 	}
 	else
 	{
+		// This ExpojoContext is not currently attached to the this thread so 
+		// Attach
+		// Begin transaction
+		// Execute the operation
+		// Then either commit or rollback
+		// Detach
 		attachThread();
 		
 		PersistenceProvider pp = pp();
@@ -428,7 +434,10 @@ public void executeWrapped(IWrappedOperation operation, Object param1, Object pa
 			operation.execute(param1, param2);
 			
 			// Commit the changes
-			pp.commitTx();
+			if (pp.isRollbackRequested())
+				pp.rollbackTx();
+			else
+				pp.commitTx();
 		}
 		catch ( Exception e )
 		{
