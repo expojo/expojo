@@ -1,4 +1,4 @@
-00d0def1 7ffe 0000 00 00000002 00000001 00000002 0007 00000101 00000000 00000007 01 
+00d0def1 7ffe 0000 00 00000002 00000001 00000002 0007 00000101 00000000 00000008 01 
 /{ class ModelRepository/ 
 	01 2134 2ee06000 
 	{
@@ -44,6 +44,13 @@ http://www.apache.org/licenses/LICENSE-2.0.html"
 			"Expojo Context and Components"
 			/UOID/ 02 2ee06000 
 			"expojo_context_components.vcm"
+		/} class ClassDiagramRef/ 
+		/{ class ClassDiagramRef/ 
+			01 2135 09d60007 
+			"DEFAULT"
+			"Excpojo Context in separate thread"
+			/UOID/ 02 2ee06000 
+			"Excpojo Context in separate thread.vcm"
 		/} class ClassDiagramRef/ 
 	}
 	/{ class MakeRunOptions/ 

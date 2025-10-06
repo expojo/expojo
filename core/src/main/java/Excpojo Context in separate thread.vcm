@@ -1,0 +1,178 @@
+7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 00000011 01 0001 
+/{ class ClassDiagram/ 
+	01 3afc 3c4d4000 
+	"Excpojo Context in separate thread"
+	"In some scenarios, especially in the UI, the available Expojo Context is created at some initiating even e.g. http request received and only committed at some closing off even e.g. after http response has been sent and http request has completed.
+
+Supports easy execution of code that requires a new, active Expojo Context in a separate thread. The main thread will wait in the invocation method until the background thread has completed and has been committed (or rolled back)."
+	""
+	"Chris Colman"
+	{
+		/{ class CClass/ 
+			01 000b 14247003 /Location/ 0000001e 0000001e 000001fe 000001ea 
+			{
+			}
+			/UOID/ 02 3c4d4000 00 5c544e94 
+			"ExpojoThread"
+			"RENAME"
+			"com\\sas\\framework\\expojo\\thread"
+			"Executes an IExceutable in a separate thread, returning only when that thread has completed its task.
+
+Invoked by calling
+
+execute(IWrappedOperation, Object param1, Object param2)
+
+This starts the background thread and starts it.
+
+The background thread establishes an ExpojoContext and then calls iWrappedOperation.execute(param1, param2).
+
+When the background thread has completed its work the execute method will return"
+			"h"
+			"java"
+			0000 
+			""
+			00 0001 0000 00 00 0000 0000 0000 00 
+			{
+			}
+			{
+				/{ class Data/ 
+					01 000d 04ba2006 0003 00 00 
+					"Runnable"
+					"updater"
+					"References the Runnable associated with this object."
+					0000 01 00 7f 01 01 
+					"null"
+					/NullObj/ 00 
+				/} class Data/ 
+				/{ class Data/ 
+					01 000d 0eb4d009 0003 00 00 
+					"Object"
+					"param1"
+					"NoDesc"
+					0000 01 00 7f 01 01 
+					""
+					/NullObj/ 00 
+				/} class Data/ 
+				/{ class Data/ 
+					01 000d 11d0400a 0003 00 00 
+					"Object"
+					"param2"
+					"NoDesc"
+					0000 01 00 7f 01 01 
+					""
+					/NullObj/ 00 
+				/} class Data/ 
+			}
+			{
+				/{ class FConstructor/ 
+					01 000c 1985d007 0001 00 00 
+					"no type"
+					"Constructor"
+					"Constructs the object"
+					0000 01 00000000 00 00 00 00 0000 
+					"IWrappedOperation iOperation, Object iParam1, Object iParam2"
+					0000 
+					""
+				/} class FConstructor/ 
+				/{ class Function/ 
+					01 0010 040a8004 0001 01 00 
+					"void"
+					"execute"
+					"Executes the given operation in a separate thread, waiting until the thread has completed before returning."
+					0000 01 00000000 00 01 00 00 0003 
+					"IWrappedOperation operation, Object param1, Object param2"
+					0000 
+					""
+				/} class Function/ 
+				/{ class Function/ 
+					01 0010 0662c008 0002 00 00 
+					"void"
+					"startAndWait"
+					"Starts the background thread to perform the work and waits until it has completed."
+					0000 01 00000000 00 01 00 00 0003 
+					""
+					0000 
+					""
+				/} class Function/ 
+			}
+			/NullObj/ 00 
+			{
+				/{ class LoggerCodeInjector/ 
+					01 371f 1da25010 
+				/} class LoggerCodeInjector/ 
+			}
+		/} class CClass/ 
+		/{ class CClass/ 
+			01 000b 270a5005 /Location/ 00000500 0000008c 000006f4 000000f0 
+			{
+			}
+			/UOID/ 02 3c4d4000 00 5c55e849 
+			"IWrappedOperation"
+			"RENAME"
+			"com\\sas\\framework\\expojo"
+			"Describe here"
+			"h"
+			"java"
+			0002 
+			""
+			00 0001 0001 01 00 0004 0000 0000 00 
+			{
+			}
+			{
+			}
+			{
+			}
+			/NullObj/ 00 
+			{
+			}
+		/} class CClass/ 
+		/{ class AssociationChain/ 
+			01 0069 010ea00b 
+			{
+				/{ class CardinalityAnchor/ 
+					01 006c 3b0b400c 000000b4 
+					{
+					}
+					00 0002 00 01 0002 0000 01 
+					""
+					/{ class RoleText/ 
+						01 0071 1936d00d 00000014 00000003 00000028 00000008 
+						{
+						}
+						""
+						0925 0001 6e61206b /UOID/ 02 3b0b400c 
+					/} class RoleText/ 
+					00 7f 01 01 01 01 /NullObj/ 00 
+				/} class CardinalityAnchor/ 
+				/{ class CardinalityAnchor/ 
+					01 006c 069d500e 000000b4 
+					{
+					}
+					01 0002 01 01 0002 0001 03 
+					"operation"
+					/{ class RoleText/ 
+						01 0071 0d4c000f ffffff14 ffffffbd 0000000c fffffffe 
+						{
+						}
+						""
+						0925 0001 35313032 /UOID/ 02 069d500e 
+					/} class RoleText/ 
+					00 7f 01 01 01 01 /NullObj/ 00 
+				/} class CardinalityAnchor/ 
+				/UOID/ 02 1936d00d /UOID/ 02 0d4c000f 
+			}
+			0002 /Bend coords/ 
+			/NullObj/ 00 /UOID/ 02 270a5005 /UOID/ 02 14247003 
+		/} class AssociationChain/ 
+	}
+	0066 
+	"com\\sas\\framework\\expojo\\thread"
+	0000 
+	/{ class OODBGenerator/ 
+		01 046d 3b420002 
+		""
+		0000 00000000 00000000 00 00 01 00 00 01 
+		"VERSION"
+		/NullObj/ 00 
+	/} class OODBGenerator/ 
+/} class ClassDiagram/ 

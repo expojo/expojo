@@ -55,7 +55,7 @@
 		
 		<junit.version>4.11</junit.version>
 
-		<apache.derby.version>10.14.1.0</apache.derby.version>
+		<apache.derby.version>10.14.2.0</apache.derby.version>
 
 		<maven.sure-fire.version>3.2.2</maven.sure-fire.version>
 			
