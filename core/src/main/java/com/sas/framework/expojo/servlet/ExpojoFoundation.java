@@ -116,6 +116,21 @@ private static final Logger logger = LoggerFactory.getLogger(ExpojoFoundation.cl
 
 // -[Methods]-
 
+
+
+
+/**
+ * Performs a migration on the data model if required.
+ * 
+ * NOTE: this is not wrapped within a live expojo context so that the implementation
+ * can wrap each individual migration step within its own expojo context - some migration
+ * steps can involve thousands of objects so it's better to commit these in smaller chunks.
+ */
+public void migrateDataModel()
+
+{
+}
+
 /**
  * Returns true if the given IP address is from a 'bad' client and so the request will
  * not be honoured in the usual way. Instead an error response with a HTML error message
@@ -258,7 +273,6 @@ public ExpojoContext createExpojoContext()
 	return expojoContextFactory.createExpojoContext();
 }
 
-
 /**
  * Performs the initialization of the app/context including calls to initialize the data
  * model and calls overrideable initApplication method once everything else is initialized.
@@ -300,6 +314,17 @@ private final void initContextPostPersistenceInit(final ServletContextEvent even
 			}
 		}
 	);	
+	
+	// Migrate data model - performs any necessary migrations on the data model to bring it up to date
+	// with regards any model changes that can be performed in code within a migrateNNN() method
+	//
+	// NOTE: not wrapped in an expojo context to allow each step of the
+	// migration to be performed within its own PersistenceProvider/Transaction because some
+	// migration steps iterate of thousands of records and can take quite a long time and build up
+	// a large amount of database deltas that need to be stored so they can be committed at the end
+	// of the transaction
+	migrateDataModel();
+	
 	
 	// Allows derived class to perform any special initialization for the application
 	ModelExposer.executeWrappedCreate

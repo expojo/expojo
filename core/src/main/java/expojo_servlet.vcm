@@ -1,4 +1,4 @@
-7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 000001c9 01 0001 
+7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 000001ca 01 0001 
 /{ class ClassDiagram/ 
 	01 3afc 394d7000 
 	"Expojo Foundation, ServletFilter"
@@ -978,7 +978,7 @@ false if exposer/session affinity should be used so that the exposer is attached
 			}
 		/} class CClass/ 
 		/{ class CClass/ 
-			01 000b 2f61a0c2 /Location/ 00000c9e 00000276 00001162 000009a6 
+			01 000b 2f61a0c2 /Location/ 00000c9e 00000276 00001162 000009e2 
 			{
 			}
 			/UOID/ 02 394d7000 00 0000007a 
@@ -1102,6 +1102,18 @@ This method should ideally be located in a core ServiceComponent of the applicat
 					"Initializatoin of the model.
 Prerequisite: data model already exists.
 Use: this method can be used to perform data migration etc., if required."
+					0000 01 00000000 00 01 00 00 0003 
+					""
+					0000 
+					""
+				/} class Function/ 
+				/{ class Function/ 
+					01 0010 0b9a11c9 0001 00 00 
+					"void"
+					"migrateDataModel"
+					"Performs a migration on the data model if required.
+
+NOTE: this is not wrapped within a live expojo context so that the implementation can wrap each individual migration step within its own expojo context - some migration steps can involve thousands of objects so it's better to commit these in smaller chunks."
 					0000 01 00000000 00 01 00 00 0003 
 					""
 					0000 
