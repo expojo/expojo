@@ -89,9 +89,9 @@
 					01 0010 251a700c 0001 00 00 
 					"void"
 					"registerAuthentication"
-					"Registers a successful authentication. Typically would update previous and current logon times."
+					"Registers a successful authentication for a particular IRealm. Typically would add some kind of authentication tracking object to keep a trail of successful logins of user along with the time it occurred and the realm they logged into."
 					0000 01 00000000 00 01 01 00 0003 
-					""
+					"IRealm realm"
 					0000 
 					""
 				/} class Function/ 

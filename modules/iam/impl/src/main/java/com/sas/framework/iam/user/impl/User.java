@@ -21,8 +21,10 @@ import com.sas.framework.entity.IEntity;
 
 
 // -[KeepBeforeClass]-
-
 import java.util.Date;
+
+import com.sas.framework.iam.realm.IRealm;
+
 
 // -[Class]-
 
@@ -321,10 +323,13 @@ public String toString()
 	return username;
 }
 
+
+
+
 /**
  * Called when a successful authentication has taken place.
  */
-public void registerAuthentication()
+public void registerAuthentication(IRealm realm)
 {
 	setCurrentLogon(new Date());
 }

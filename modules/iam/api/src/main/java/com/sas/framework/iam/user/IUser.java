@@ -21,6 +21,7 @@ import com.sas.framework.entity.IEntity;
 // -[KeepBeforeClass]-
 import java.util.Date;
 
+import com.sas.framework.iam.realm.IRealm;
 
 
 // -[Class]-
@@ -85,10 +86,11 @@ public abstract String toString();
 
 
 /**
- * Registers a successful authentication. Typically would update previous and current
- * logon times.
+ * Registers a successful authentication for a particular IRealm. Typically would add
+ * some kind of authentication tracking object to keep a trail of successful logins of
+ * user along with the time it occurred and the realm they logged into.
  */
-public abstract void registerAuthentication();
+public abstract void registerAuthentication(IRealm realm);
 
 
 

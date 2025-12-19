@@ -708,7 +708,7 @@ This method does not activate the User."
 					"registerAuthentication"
 					"Called when a successful authentication has taken place."
 					0000 01 00000000 00 01 00 00 0003 
-					""
+					"IRealm realm"
 					0000 
 					""
 				/} class Function/ 
