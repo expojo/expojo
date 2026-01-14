@@ -65,6 +65,14 @@ private DataGridView<T> protectedDataGridView;
 // -[Methods]-
 
 /**
+ * Constructs the new table
+ */
+public BootstrapDataTable(final String id, final List<? extends IColumn<T, S>> columns, final ISortableDataProvider<T, S> dataProvider, final int rowsPerPage, boolean striped)
+{
+	this(id, columns, dataProvider, rowsPerPage, striped, null);
+}
+
+/**
  * Calls base class to create the DataGridView but maintains a reference to it so that
  * it can be used by this derived class.
  */
@@ -121,19 +129,25 @@ protected Item<T> newRowItem(String id, int index, IModel<T> model)
  */
 public BootstrapDataTable(final String id, final List<? extends IColumn<T, S>> columns, final ISortableDataProvider<T, S> dataProvider, final int rowsPerPage)
 {
-	this(id, columns, dataProvider, rowsPerPage, false);
+	this(id, columns, dataProvider, rowsPerPage, false, null);
 }
 
 /**
  * Constructs the new table
  */
-public BootstrapDataTable(final String id, final List<? extends IColumn<T, S>> columns, final ISortableDataProvider<T, S> dataProvider, final int rowsPerPage, boolean striped)
+public BootstrapDataTable(final String id, final List<? extends IColumn<T, S>> columns, final ISortableDataProvider<T, S> dataProvider, final int rowsPerPage, boolean striped, String style)
 {
 	super(id, columns, dataProvider, rowsPerPage);
 
-	String bootstrapTableClasses = " table table-condensed table-hover table-stemless";
+	String bootstrapTableClasses;
+	if (style != null)
+		bootstrapTableClasses = " " + style;
+	else
+		bootstrapTableClasses = " table table-condensed table-hover table-stemless";
+		
 	if (striped)
 		bootstrapTableClasses += " table-striped";
+		
 	add(new AttributeAppender("class", bootstrapTableClasses));
 
 	

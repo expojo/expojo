@@ -1,4 +1,4 @@
-7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 0000001e 01 0001 
+7abbfab0 7ffe 0000 00 00000005 00000001 00000005 0241 00000101 00000000 0000001f 01 0001 
 /{ class ClassDiagram/ 
 	01 3afc 3d15a000 
 	"Bootstrap capable components"
@@ -7,7 +7,7 @@
 	""
 	{
 		/{ class CClass/ 
-			01 000b 2e449003 /Location/ 0000001e 00000168 0000042e 00000334 
+			01 000b 2e449003 /Location/ 0000001e 00000168 0000042e 00000370 
 			{
 			}
 			/UOID/ 02 3d15a000 00 4097e695 
@@ -75,6 +75,16 @@
 					"Constructs the new table"
 					0000 01 00000000 01 00 00 00 0000 
 					"final String id, final List<? extends IColumn<T, S>> columns, final ISortableDataProvider<T, S> dataProvider, final int rowsPerPage, boolean striped"
+					0000 
+					""
+				/} class FConstructor/ 
+				/{ class FConstructor/ 
+					01 000c 2450801e 0001 00 00 
+					"no type"
+					"Constructor"
+					"Constructs the new table"
+					0000 01 00000000 01 00 00 00 0000 
+					"final String id, final List<? extends IColumn<T, S>> columns, final ISortableDataProvider<T, S> dataProvider, final int rowsPerPage, boolean striped, String style"
 					0000 
 					""
 				/} class FConstructor/ 
